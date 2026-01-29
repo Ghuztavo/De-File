@@ -6,7 +6,8 @@ public class ParticleSpawner : MonoBehaviour
 
     [SerializeField] private GameObject particlePrefab;
 
-    [SerializeField] private int totalCount = 500;
+    [SerializeField] private GameManager gameManager;
+    private int totalCount => gameManager != null ? gameManager.TotalObjectSpawns : 500;
     [SerializeField] private float spawnRadius = 0.2f;
 
     [SerializeField] private float spawnRate = 100f;
