@@ -5,7 +5,7 @@ public class FinishBox : MonoBehaviour
 {
     // There is no game manager yet
     [SerializeField] private GameManager gameManager;
-    // triggerCount replaced by GameManager.Score
+    [SerializeField] private bool substractMode;
     private int triggerCount
     {
         get => gameManager != null ? gameManager.Score : 0;
@@ -18,7 +18,8 @@ public class FinishBox : MonoBehaviour
         if (collision.CompareTag("Ball"))
         {
             Destroy(collision.gameObject);
-            triggerCount++;
+            if (substractMode) tri  ggerCount--;
+            else triggerCount++;
             Debug.Log("Particles finished: " + triggerCount);
             //gameManager.IncreaseScore(1);
         }
