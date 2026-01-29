@@ -9,6 +9,6 @@ PhysicsMaterial2D:
   m_Name: LiquidParticles
   serializedVersion: 2
   friction: 0
-  bounciness: 0.6
+  bounciness: 0.4
   m_FrictionCombine: 0
   m_BounceCombine: 4

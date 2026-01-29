@@ -10,7 +10,7 @@ public class FinishBox : MonoBehaviour
     // Detect when particles enter the finish the box, destroy them and increase score
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Ball"))
         {
             Destroy(collision.gameObject);
             triggerCount++;
