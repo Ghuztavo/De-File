@@ -33,17 +33,33 @@ public class GridCensorGenerator : MonoBehaviour
     public Camera paintCamera;              // if null -> Camera.main
     public LayerMask cellLayerMask = ~0;    // optionally put cells on a "Cell" layer and select it here
 
+    [Header("Redo Button")]
+    public GameObject redoButton;           // Empty GameObject with collider for mouse area
+
     [Header("Debug")]
     public bool showDebugLogs = true;
 
     private readonly List<GridCell> cells = new();
+    private readonly List<GridCell> lastCensoredCells = new();  // Stores cells from last mouse press/drag
+    private bool canRedo = false;           // Only one redo allowed per action
     private BoxCollider2D bounds;
     private bool wasMousePressed = false;
+    private Collider2D redoButtonCollider;
 
     private void Awake()
     {
         bounds = GetComponent<BoxCollider2D>();
         bounds.isTrigger = true;
+
+        // Get the redo button's collider
+        if (redoButton != null)
+        {
+            redoButtonCollider = redoButton.GetComponent<Collider2D>();
+            if (redoButtonCollider == null)
+            {
+                Debug.LogWarning("Redo button needs a Collider2D component!");
+            }
+        }
     }
 
     private void Start()
@@ -58,15 +74,105 @@ public class GridCensorGenerator : MonoBehaviour
         {
             bool isPressed = Mouse.current.leftButton.isPressed;
 
-            // Paint on both initial click and while dragging
             if (isPressed)
             {
                 Vector2 screenPos = Mouse.current.position.ReadValue();
-                PaintAtScreenPosition(screenPos);
+
+                // Check if clicking on redo button first
+                if (CheckRedoButtonClick(screenPos))
+                {
+                    PerformRedo();
+                }
+                else
+                {
+                    // New paint action - start fresh list
+                    if (!wasMousePressed)
+                    {
+                        // Clear the last action list when starting a new paint stroke
+                        lastCensoredCells.Clear();
+                        canRedo = false;
+                    }
+
+                    PaintAtScreenPosition(screenPos);
+                }
+            }
+            else if (wasMousePressed && !isPressed)
+            {
+                // Mouse was just released - enable redo for this action
+                if (lastCensoredCells.Count > 0)
+                {
+                    canRedo = true;
+                    if (showDebugLogs)
+                        Debug.Log($"Paint action completed. {lastCensoredCells.Count} cells censored. Redo available.");
+                }
             }
 
             wasMousePressed = isPressed;
         }
+    }
+
+    private bool CheckRedoButtonClick(Vector2 screenPos)
+    {
+        if (redoButton == null || redoButtonCollider == null || !canRedo)
+            return false;
+
+        Camera cam = paintCamera != null ? paintCamera : Camera.main;
+        if (cam == null) return false;
+
+        Vector3 worldPoint;
+        if (cam.orthographic)
+        {
+            worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, cam.nearClipPlane));
+        }
+        else
+        {
+            float distance = Mathf.Abs(cam.transform.position.z - redoButton.transform.position.z);
+            worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, distance));
+        }
+
+        Vector2 worldPoint2D = new Vector2(worldPoint.x, worldPoint.y);
+
+        // Check if clicking on redo button
+        return redoButtonCollider.OverlapPoint(worldPoint2D);
+    }
+
+    private void PerformRedo()
+    {
+        if (!canRedo || lastCensoredCells.Count == 0)
+        {
+            if (showDebugLogs) Debug.Log("No redo available");
+            return;
+        }
+
+        if (showDebugLogs) Debug.Log($"Performing redo on {lastCensoredCells.Count} cells");
+
+        // Remove censors and restore ink
+        foreach (GridCell cell in lastCensoredCells)
+        {
+            if (cell != null && cell.censored)
+            {
+                // Find and destroy the censor child object
+                for (int i = cell.transform.childCount - 1; i >= 0; i--)
+                {
+                    Transform child = cell.transform.GetChild(i);
+                    if (child.name.StartsWith("Censor_"))
+                    {
+                        Destroy(child.gameObject);
+                        break;
+                    }
+                }
+
+                // Restore cell state and ink
+                cell.censored = false;
+                ink += inkCostPerCell;
+            }
+        }
+
+        if (showDebugLogs) Debug.Log($"Redo complete. Restored {lastCensoredCells.Count * inkCostPerCell} ink. Total ink: {ink}");
+
+        // Clear the list and disable redo
+        lastCensoredCells.Clear();
+        canRedo = false;
     }
 
     private void PaintAtScreenPosition(Vector2 screenPos)
@@ -304,6 +410,9 @@ public class GridCensorGenerator : MonoBehaviour
         ink -= inkCostPerCell;
         cell.censored = true;
 
+        // Add to the current action list
+        lastCensoredCells.Add(cell);
+
         if (showDebugLogs) Debug.Log($"Successfully censored cell {cell.index}. Remaining ink: {ink}");
     }
 
@@ -313,5 +422,7 @@ public class GridCensorGenerator : MonoBehaviour
             DestroyImmediate(transform.GetChild(i).gameObject);
 
         cells.Clear();
+        lastCensoredCells.Clear();
+        canRedo = false;
     }
 }
