@@ -18,7 +18,7 @@ public class FinishBox : MonoBehaviour
         if (collision.CompareTag("Ball"))
         {
             Destroy(collision.gameObject);
-            if (substractMode) tri  ggerCount--;
+            if (substractMode) triggerCount--;
             else triggerCount++;
             Debug.Log("Particles finished: " + triggerCount);
             //gameManager.IncreaseScore(1);
