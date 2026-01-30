@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8648029576349993428}
   - component: {fileID: 530101305427308897}
   m_Layer: 0
-  m_Name: FormattingCircle
+  m_Name: HeadlineR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

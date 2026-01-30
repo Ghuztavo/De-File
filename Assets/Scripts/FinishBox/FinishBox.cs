@@ -6,11 +6,7 @@ public class FinishBox : MonoBehaviour
     // There is no game manager yet
     [SerializeField] private GameManager gameManager;
     [SerializeField] private bool substractMode;
-    private int triggerCount
-    {
-        get => gameManager != null ? gameManager.Score : 0;
-        set { if (gameManager != null) gameManager.Score = value; }
-    }
+    [SerializeField] private int scoreAmount = 1;
 
     // Detect when particles enter the finish the box, destroy them and increase score
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,10 +14,12 @@ public class FinishBox : MonoBehaviour
         if (collision.CompareTag("Ball"))
         {
             Destroy(collision.gameObject);
-            if (substractMode) triggerCount--;
-            else triggerCount++;
-            Debug.Log("Particles finished: " + triggerCount);
-            //gameManager.IncreaseScore(1);
+            
+            if (gameManager != null)
+            {
+                int finalAmount = substractMode ? -scoreAmount : scoreAmount;
+                gameManager.UpdateScore(finalAmount);
+            }
         }
     }
 }

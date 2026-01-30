@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
         StartButton.SetActive(false);
     }
 
+    public void UpdateScore(int amount)
+    {
+        Score += amount;
+        Debug.Log("Score Updated: " + Score);
+    }
+
 
     public void Restart()
     {
