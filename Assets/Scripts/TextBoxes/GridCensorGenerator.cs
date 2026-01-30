@@ -1,7 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class GridCensorGenerator : MonoBehaviour
@@ -21,6 +21,7 @@ public class GridCensorGenerator : MonoBehaviour
     [Header("Prefabs")]
     public GridCell cellPrefab;
     public GameObject censorPrefab;
+    public Transform censorsRoot;
 
     [Header("Overflow Behavior")]
     public bool truncateToFitBounds = true;
@@ -36,34 +37,51 @@ public class GridCensorGenerator : MonoBehaviour
 
     [Header("Drag Paint")]
     public Camera paintCamera;              // if null -> Camera.main
-    public LayerMask cellLayerMask = ~0;    // optionally put cells on a "Cell" layer and select it here
+    public LayerMask cellLayerMask = ~0;    // should include ONLY cell colliders
 
     [Header("Redo Button")]
-    public GameObject redoButton;           // Empty GameObject with collider for mouse area
+    public GameObject redoButton;
 
     [Header("Debug")]
     public bool showDebugLogs = true;
 
+    [Header("Censor Settings")]
+    public int censorLayer = 2; // 2 = Ignore Raycast (recommended)
+
     private readonly List<GridCell> cells = new();
-    private readonly List<GridCell> lastCensoredCells = new();  // Stores cells from last mouse press/drag
-    private bool canRedo = false;           // Only one redo allowed per action
+    private readonly List<GridCell> lastCensoredCells = new();
+    private bool canRedo = false;
     private BoxCollider2D bounds;
     private bool wasMousePressed = false;
     private Collider2D redoButtonCollider;
+
+    private readonly Dictionary<int, GameObject> censorByCellIndex = new();
+    private CompositeCollider2D censorComposite;
+    private Rigidbody2D censorRb;
+
+    private bool compositeRefreshQueued = false;
 
     private void Awake()
     {
         bounds = GetComponent<BoxCollider2D>();
         bounds.isTrigger = true;
 
-        // Get the redo button's collider
+        if (censorsRoot == null)
+        {
+            var t = transform.Find("CensorsRoot");
+            if (t != null) censorsRoot = t;
+        }
+
+        EnsureCensorComposite();
+
+        // Make sure your paint raycasts never consider the censor layer
+        cellLayerMask &= ~(1 << censorLayer);
+
         if (redoButton != null)
         {
             redoButtonCollider = redoButton.GetComponent<Collider2D>();
             if (redoButtonCollider == null)
-            {
                 Debug.LogWarning("Redo button needs a Collider2D component!");
-            }
         }
     }
 
@@ -74,46 +92,82 @@ public class GridCensorGenerator : MonoBehaviour
 
     private void Update()
     {
-        // Proper click detection with press/release tracking
-        if (Mouse.current != null)
+        if (Mouse.current == null) return;
+
+        bool isPressed = Mouse.current.leftButton.isPressed;
+
+        if (isPressed)
         {
-            bool isPressed = Mouse.current.leftButton.isPressed;
+            Vector2 screenPos = Mouse.current.position.ReadValue();
 
-            if (isPressed)
+            if (CheckRedoButtonClick(screenPos))
             {
-                Vector2 screenPos = Mouse.current.position.ReadValue();
-
-                // Check if clicking on redo button first
-                if (CheckRedoButtonClick(screenPos))
-                {
-                    PerformRedo();
-                }
-                else
-                {
-                    // New paint action - start fresh list
-                    if (!wasMousePressed)
-                    {
-                        // Clear the last action list when starting a new paint stroke
-                        lastCensoredCells.Clear();
-                        canRedo = false;
-                    }
-
-                    PaintAtScreenPosition(screenPos);
-                }
+                PerformRedo();
             }
-            else if (wasMousePressed && !isPressed)
+            else
             {
-                // Mouse was just released - enable redo for this action
-                if (lastCensoredCells.Count > 0)
+                if (!wasMousePressed)
                 {
-                    canRedo = true;
-                    if (showDebugLogs)
-                        Debug.Log($"Paint action completed. {lastCensoredCells.Count} cells censored. Redo available.");
+                    lastCensoredCells.Clear();
+                    canRedo = false;
                 }
-            }
 
-            wasMousePressed = isPressed;
+                PaintAtScreenPosition(screenPos);
+            }
         }
+        else if (wasMousePressed && !isPressed)
+        {
+            if (lastCensoredCells.Count > 0)
+            {
+                canRedo = true;
+                if (showDebugLogs)
+                    Debug.Log($"Paint action completed. {lastCensoredCells.Count} cells censored. Redo available.");
+            }
+        }
+
+        wasMousePressed = isPressed;
+    }
+
+    private void EnsureCensorComposite()
+    {
+        if (censorsRoot == null)
+        {
+            Debug.LogError("censorsRoot not assigned. Create a child 'CensorsRoot' and assign it.");
+            return;
+        }
+
+        censorRb = censorsRoot.GetComponent<Rigidbody2D>();
+        if (censorRb == null) censorRb = censorsRoot.gameObject.AddComponent<Rigidbody2D>();
+        censorRb.bodyType = RigidbodyType2D.Static;
+        censorRb.simulated = true;
+
+        censorComposite = censorsRoot.GetComponent<CompositeCollider2D>();
+        if (censorComposite == null) censorComposite = censorsRoot.gameObject.AddComponent<CompositeCollider2D>();
+
+        censorComposite.geometryType = CompositeCollider2D.GeometryType.Outlines;
+        censorComposite.generationType = CompositeCollider2D.GenerationType.Synchronous;
+        censorComposite.isTrigger = false;
+    }
+
+    private void QueueRefreshCensorComposite()
+    {
+        if (censorComposite == null || compositeRefreshQueued) return;
+        compositeRefreshQueued = true;
+        StartCoroutine(RefreshCompositeNextFrame());
+    }
+
+    private IEnumerator RefreshCompositeNextFrame()
+    {
+        yield return null; // wait end-of-frame so Destroy() & collider updates apply
+        Physics2D.SyncTransforms();
+
+        if (censorComposite != null)
+        {
+            censorComposite.enabled = false;
+            censorComposite.enabled = true;
+        }
+
+        compositeRefreshQueued = false;
     }
 
     private bool CheckRedoButtonClick(Vector2 screenPos)
@@ -126,19 +180,14 @@ public class GridCensorGenerator : MonoBehaviour
 
         Vector3 worldPoint;
         if (cam.orthographic)
-        {
             worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, cam.nearClipPlane));
-        }
         else
         {
             float distance = Mathf.Abs(cam.transform.position.z - redoButton.transform.position.z);
             worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, distance));
         }
 
-        Vector2 worldPoint2D = new Vector2(worldPoint.x, worldPoint.y);
-
-        // Check if clicking on redo button
-        return redoButtonCollider.OverlapPoint(worldPoint2D);
+        return redoButtonCollider.OverlapPoint(new Vector2(worldPoint.x, worldPoint.y));
     }
 
     private void PerformRedo()
@@ -151,33 +200,26 @@ public class GridCensorGenerator : MonoBehaviour
 
         if (showDebugLogs) Debug.Log($"Performing redo on {lastCensoredCells.Count} cells");
 
-        // Remove censors and restore ink
         foreach (GridCell cell in lastCensoredCells)
         {
-            if (cell != null && cell.censored)
-            {
-                // Find and destroy the censor child object
-                for (int i = cell.transform.childCount - 1; i >= 0; i--)
-                {
-                    Transform child = cell.transform.GetChild(i);
-                    if (child.name.StartsWith("Censor_"))
-                    {
-                        Destroy(child.gameObject);
-                        break;
-                    }
-                }
+            if (cell == null || !cell.censored) continue;
 
-                // Restore cell state and ink
-                cell.censored = false;
-                ink += inkCostPerCell;
-            }
+            if (censorByCellIndex.TryGetValue(cell.index, out var censorGo) && censorGo != null)
+                Destroy(censorGo);
+
+            censorByCellIndex.Remove(cell.index);
+
+            cell.censored = false;
+            ink += inkCostPerCell;
         }
 
-        if (showDebugLogs) Debug.Log($"Redo complete. Restored {lastCensoredCells.Count * inkCostPerCell} ink. Total ink: {ink}");
+        if (showDebugLogs)
+            Debug.Log($"Redo complete. Restored {lastCensoredCells.Count * inkCostPerCell} ink. Total ink: {ink}");
 
-        // Clear the list and disable redo
         lastCensoredCells.Clear();
         canRedo = false;
+
+        QueueRefreshCensorComposite();
     }
 
     private void PaintAtScreenPosition(Vector2 screenPos)
@@ -189,84 +231,44 @@ public class GridCensorGenerator : MonoBehaviour
             return;
         }
 
-        // For 2D orthographic camera, we need to properly convert screen to world
         Vector3 worldPoint;
-
         if (cam.orthographic)
-        {
-            // For orthographic camera, just use the camera's transform position z
             worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, cam.nearClipPlane));
-        }
         else
         {
-            // For perspective camera
             float distance = Mathf.Abs(cam.transform.position.z - transform.position.z);
             worldPoint = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, distance));
         }
 
         Vector2 worldPoint2D = new Vector2(worldPoint.x, worldPoint.y);
 
-        if (showDebugLogs)
-        {
-            Debug.Log($"Screen: {screenPos} -> World: {worldPoint2D}");
-        }
+        if (!bounds.OverlapPoint(worldPoint2D)) return;
 
-        // Must be inside THIS generator's bounds
-        if (!bounds.OverlapPoint(worldPoint2D))
-        {
-            if (showDebugLogs) Debug.Log($"Point {worldPoint2D} not in bounds");
-            return;
-        }
-
-        if (showDebugLogs) Debug.Log($"Point IS in bounds! Raycasting...");
-
-        // Try multiple approaches to find the cell
-
-        // Approach 1: Raycast
         RaycastHit2D hit = Physics2D.Raycast(worldPoint2D, Vector2.zero, 0f, cellLayerMask);
-
-        if (hit.collider != null)
+        if (hit.collider != null && hit.collider.transform.IsChildOf(transform))
         {
-            if (showDebugLogs) Debug.Log($"Raycast hit: {hit.collider.name}");
-
-            if (hit.collider.transform.IsChildOf(transform))
+            GridCell cell = hit.collider.GetComponent<GridCell>();
+            if (cell != null)
             {
-                GridCell cell = hit.collider.GetComponent<GridCell>();
-                if (cell != null)
-                {
-                    if (showDebugLogs) Debug.Log($"Found cell {cell.index}, attempting to censor...");
-                    TryCensorCell(cell);
-                    return;
-                }
+                TryCensorCell(cell);
+                return;
             }
         }
 
-        // Approach 2: OverlapPoint as fallback
         Collider2D[] hits = Physics2D.OverlapPointAll(worldPoint2D, cellLayerMask);
-        if (showDebugLogs) Debug.Log($"OverlapPoint found {hits.Length} colliders");
-
         foreach (var col in hits)
         {
-            if (col == null) continue;
-            if (col == bounds) continue; // Skip the generator's own bounds
+            if (col == null || col == bounds) continue;
+            if (!col.transform.IsChildOf(transform)) continue;
 
-            if (showDebugLogs) Debug.Log($"Checking collider: {col.name}");
-
-            if (col.transform.IsChildOf(transform))
+            GridCell cell = col.GetComponent<GridCell>();
+            if (cell != null)
             {
-                GridCell cell = col.GetComponent<GridCell>();
-                if (cell != null)
-                {
-                    if (showDebugLogs) Debug.Log($"Found cell {cell.index} via overlap, attempting to censor...");
-                    TryCensorCell(cell);
-                    return;
-                }
+                TryCensorCell(cell);
+                return;
             }
         }
-
-        if (showDebugLogs) Debug.Log("No cell found at position");
     }
-
 
     public void Generate()
     {
@@ -277,22 +279,8 @@ public class GridCensorGenerator : MonoBehaviour
 
         Vector2 cellSize = new Vector2(cellWidth, cellHeight);
 
-        float stepX = cellWidth + cellGapX;
-        float stepY = cellHeight + cellGapY;
-
-        float minStep = 0.01f;
-
-        if (stepX < minStep)
-        {
-            Debug.LogWarning($"{name}: cellWidth + cellGapX is too small ({stepX}). Setting to minimum {minStep}.");
-            stepX = minStep;
-        }
-
-        if (stepY < minStep)
-        {
-            Debug.LogWarning($"{name}: cellHeight + cellGapY is too small ({stepY}). Setting to minimum {minStep}.");
-            stepY = minStep;
-        }
+        float stepX = Mathf.Max(0.01f, cellWidth + cellGapX);
+        float stepY = Mathf.Max(0.01f, cellHeight + cellGapY);
 
         Vector2 b = bounds.size;
         float usableW = Mathf.Max(0f, b.x);
@@ -301,22 +289,12 @@ public class GridCensorGenerator : MonoBehaviour
         int cols = Mathf.Max(1, Mathf.FloorToInt((usableW + Mathf.Abs(cellGapX)) / stepX));
         int rows = Mathf.Max(1, Mathf.FloorToInt((usableH + Mathf.Abs(cellGapY)) / stepY));
 
-        if (cols == 0 || rows == 0)
-        {
-            Debug.LogWarning($"{name}: Bounds too small for even 1 cell.");
-            return;
-        }
-
         int capacity = cols * rows;
 
         string toPlace = stringContent;
         if (toPlace.Length > capacity)
         {
-            if (!truncateToFitBounds)
-            {
-                Debug.LogWarning($"{name}: Text length {toPlace.Length} exceeds capacity {capacity}.");
-                return;
-            }
+            if (!truncateToFitBounds) return;
             toPlace = toPlace.Substring(0, capacity);
         }
 
@@ -342,92 +320,85 @@ public class GridCensorGenerator : MonoBehaviour
             cell.Init(this, i, toPlace[i], cellSize, lockedTextSize);
             cells.Add(cell);
         }
-
-        Debug.Log($"Generated {cells.Count} cells in {cols}x{rows} grid");
     }
 
     public void TryCensorCell(GridCell cell)
     {
-        if (showDebugLogs)
-            Debug.Log($"TryCensorCell called - Cell null? {cell == null}, Censored? {cell?.censored}, Prefab null? {censorPrefab == null}, Ink: {ink}/{inkCostPerCell}");
+        if (cell == null || cell.censored) return;
+        if (censorPrefab == null) return;
+        if (ink < inkCostPerCell) return;
+        if (censorsRoot == null) return;
 
-        if (cell == null || cell.censored)
-        {
-            if (showDebugLogs) Debug.Log($"Cell is null or already censored");
-            return;
-        }
+        GameObject censor = Instantiate(censorPrefab, censorsRoot);
+        censorByCellIndex[cell.index] = censor;
 
-        if (censorPrefab == null)
-        {
-            if (showDebugLogs) Debug.LogError("Censor prefab is null!");
-            return;
-        }
+        // Apply layer to whole censor hierarchy (important if collider is on a child)
+        foreach (Transform t in censor.GetComponentsInChildren<Transform>(true))
+            t.gameObject.layer = censorLayer;
 
-        if (ink < inkCostPerCell)
-        {
-            if (showDebugLogs) Debug.Log($"Not enough ink: {ink} < {inkCostPerCell}");
-            return;
-        }
-
-        if (showDebugLogs) Debug.Log($"Creating censor for cell {cell.index}");
-
-        GameObject censor = Instantiate(censorPrefab, cell.transform);
-        censor.transform.localPosition = Vector3.zero;
-        censor.transform.localRotation = Quaternion.identity;
+        // Position/rotation
+        censor.transform.position = cell.transform.position;
+        censor.transform.rotation = Quaternion.identity;
         censor.name = $"Censor_{cell.index}";
 
-        // Get the sprite renderer to determine the original sprite size
-        SpriteRenderer censorSprite = censor.GetComponent<SpriteRenderer>();
+        // Ensure composite + mark ALL colliders usedByComposite (important if collider is on a child)
+        EnsureCensorComposite();
+
+        var colliders = censor.GetComponentsInChildren<Collider2D>(true);
+        foreach (var col in colliders)
+        {
+            col.usedByComposite = true;
+            col.isTrigger = false;
+
+            // If it's a BoxCollider2D, size it to the cell
+        }
+
+        // Scale sprite (visual)
+        SpriteRenderer censorSprite = censor.GetComponentInChildren<SpriteRenderer>();
         if (censorSprite != null && censorSprite.sprite != null)
         {
-            // Calculate the scale needed to match cell size
-            // Sprite size is in pixels, converted to units by PPU (pixels per unit)
             Sprite sprite = censorSprite.sprite;
             float spriteWidth = sprite.rect.width / sprite.pixelsPerUnit;
             float spriteHeight = sprite.rect.height / sprite.pixelsPerUnit;
 
-            // Calculate scale to fit cell exactly
             float scaleX = cellWidth / spriteWidth;
             float scaleY = cellHeight / spriteHeight;
-
             censor.transform.localScale = new Vector3(scaleX, scaleY, 1f);
-
-            if (showDebugLogs)
-                Debug.Log($"Censor sprite: {spriteWidth}x{spriteHeight} units, scaling to {scaleX}x{scaleY} for cell {cellWidth}x{cellHeight}");
         }
         else
         {
-            // Fallback: assume prefab is 1x1 unit
             censor.transform.localScale = new Vector3(cellWidth, cellHeight, 1f);
-
-            if (showDebugLogs)
-                Debug.Log($"No sprite found, using direct scale: {cellWidth}x{cellHeight}");
-        }
-
-        // Update collider if present
-        var censorCol = censor.GetComponent<BoxCollider2D>();
-        if (censorCol != null)
-        {
-            censorCol.size = new Vector2(cellWidth, cellHeight);
-            censorCol.offset = Vector2.zero;
         }
 
         ink -= inkCostPerCell;
         cell.censored = true;
-
-        // Add to the current action list
         lastCensoredCells.Add(cell);
 
-        if (showDebugLogs) Debug.Log($"Successfully censored cell {cell.index}. Remaining ink: {ink}");
+        QueueRefreshCensorComposite();
     }
 
     public void Clear()
     {
+        // Destroy generated CELLS (children except CensorsRoot)
         for (int i = transform.childCount - 1; i >= 0; i--)
-            DestroyImmediate(transform.GetChild(i).gameObject);
+        {
+            Transform child = transform.GetChild(i);
+            if (censorsRoot != null && child == censorsRoot) continue;
+            Destroy(child.gameObject);
+        }
+
+        // Destroy all censors under the composite root (keep the root)
+        if (censorsRoot != null)
+        {
+            for (int i = censorsRoot.childCount - 1; i >= 0; i--)
+                Destroy(censorsRoot.GetChild(i).gameObject);
+        }
 
         cells.Clear();
         lastCensoredCells.Clear();
+        censorByCellIndex.Clear();
         canRedo = false;
+
+        QueueRefreshCensorComposite();
     }
 }
