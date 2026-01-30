@@ -18,10 +18,15 @@ public class ParticleSpawner : MonoBehaviour
 
     void Update()
     {
+        if (gameManager == null) { return; }
+
         isPouring = true; // For testing purposes, always pour <----------------------------------
-        if (isPouring)
+        if (gameManager.gameStarted == true)
         {
-            StartPouring();
+            if (isPouring)
+            {
+                StartPouring();
+            }
         }
     }
 

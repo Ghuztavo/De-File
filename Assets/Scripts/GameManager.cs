@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int Score = 0;
     public float Ink = 10f;
     public int TotalObjectSpawns = 500;
+    public bool gameStarted = false;
 
     public float levelTime = 60f;
     public bool timeUp = false;
@@ -19,15 +20,19 @@ public class GameManager : MonoBehaviour
     {
         //on click start game
         
-        if (timer != null)
-        {
-            StartTimer();
-        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameStarted == true)
+        {
+            if (timer != null)
+            {
+                StartTimer();
+            }
+        }
         
     }
 
