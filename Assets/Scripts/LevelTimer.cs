@@ -3,50 +3,56 @@ using UnityEngine;
 
 public class LevelTimer : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     private TextMeshProUGUI timerText;
-    private float startTime;
+    private float timeRemaining;
     private bool isRunning = false;
 
     // NEW — stores the final formatted time
     private string finalFormattedTime = "00:00.00";
 
+
     void Start()
     {
         timerText = GetComponent<TextMeshProUGUI>();
-        startTime = Time.time;
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     void Update()
     {
-        if (isRunning)
+        if (!isRunning) return;
+
+        timeRemaining -= Time.deltaTime;
+
+        if (timeRemaining <= 0f)
         {
-            float t = Time.time - startTime;
+            timeRemaining = 0f;
+            isRunning = false;
 
-            string minutes = ((int)t / 60).ToString("00");
-            string seconds = (t % 60).ToString("00");
-            string milliseconds = ((int)(t * 100) % 100).ToString("00");
-
-            timerText.text = $"{minutes}:{seconds}.{milliseconds}";
+            // notify GameManager
+            gameManager.timeUp = true;
         }
+
+        UpdateUI();
     }
 
-    public void StopTimer()
+    public void StartCountdown(float startTime)
     {
-        isRunning = false;
-
-        // NEW — capture final displayed text
-        finalFormattedTime = timerText.text;
-    }
-
-    public void ResetAndStartTimer()
-    {
-        startTime = Time.time;
+        timeRemaining = startTime;
         isRunning = true;
+        UpdateUI();
     }
 
-    // NEW — provides final time to FinishLine
-    public string GetFormattedTime()
+    private void UpdateUI()
     {
-        return finalFormattedTime;
+        float t = timeRemaining;
+
+        string minutes = ((int)t / 60).ToString("00");
+        string seconds = ((int)t % 60).ToString("00");
+        string milliseconds = ((int)(t * 100) % 100).ToString("00");
+
+        timerText.text = $"{minutes}:{seconds}.{milliseconds}";
     }
+
 }
