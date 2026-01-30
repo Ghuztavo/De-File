@@ -46,4 +46,15 @@ public class GameManager : MonoBehaviour
         timer.StartCountdown(levelTime);
     }
 
+    public void StartGame()
+    {
+        gameStarted = true;
+        StartButton.SetActive(false);
+    }
+
+
+    public void Restart()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
 }
