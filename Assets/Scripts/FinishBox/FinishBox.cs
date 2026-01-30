@@ -4,8 +4,13 @@ using UnityEngine;
 public class FinishBox : MonoBehaviour
 {
     // There is no game manager yet
-    //[SerializeField] GameManager gameManager;
-    private int triggerCount = 0;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private bool substractMode;
+    private int triggerCount
+    {
+        get => gameManager != null ? gameManager.Score : 0;
+        set { if (gameManager != null) gameManager.Score = value; }
+    }
 
     // Detect when particles enter the finish the box, destroy them and increase score
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +18,8 @@ public class FinishBox : MonoBehaviour
         if (collision.CompareTag("Ball"))
         {
             Destroy(collision.gameObject);
-            triggerCount++;
+            if (substractMode) triggerCount--;
+            else triggerCount++;
             Debug.Log("Particles finished: " + triggerCount);
             //gameManager.IncreaseScore(1);
         }

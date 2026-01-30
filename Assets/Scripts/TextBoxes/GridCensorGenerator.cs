@@ -26,7 +26,12 @@ public class GridCensorGenerator : MonoBehaviour
     public bool truncateToFitBounds = true;
 
     [Header("Ink")]
-    public float ink = 10f;
+    [SerializeField] private GameManager gameManager;
+    public float ink
+    {
+        get => gameManager != null ? gameManager.Ink : 10f;
+        set { if (gameManager != null) gameManager.Ink = value; }
+    }
     public float inkCostPerCell = 1f;
 
     [Header("Drag Paint")]
