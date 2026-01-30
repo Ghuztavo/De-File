@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ParticleSpawner : MonoBehaviour
 {
-    public bool isPouring { get; set; }
+    //public bool isPouring { get; set; }
 
     [SerializeField] private GameObject particlePrefab;
 
@@ -20,13 +20,10 @@ public class ParticleSpawner : MonoBehaviour
     {
         if (gameManager == null) { return; }
 
-        isPouring = true; // For testing purposes, always pour <----------------------------------
+        //isPouring = true; // For testing purposes, always pour <----------------------------------
         if (gameManager.gameStarted == true)
         {
-            if (isPouring)
-            {
-                StartPouring();
-            }
+            StartPouring();
         }
     }
 
