@@ -3,20 +3,26 @@ using UnityEngine;
 
 public class LevelTimer : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameManager gameManager;
 
-    private TextMeshProUGUI timerText;
     private float timeRemaining;
     private bool isRunning = false;
 
-    // NEW — stores the final formatted time
-    private string finalFormattedTime = "00:00.00";
-
-
     void Start()
     {
-        timerText = GetComponent<TextMeshProUGUI>();
-        gameManager = FindFirstObjectByType<GameManager>();
+        // Get TextMeshProUGUI if not assigned
+        if (timerText == null)
+        {
+            timerText = GetComponent<TextMeshProUGUI>();
+        }
+
+        // Display initial time from GameManager
+        if (gameManager != null)
+        {
+            timeRemaining = gameManager.levelTime;
+            UpdateUI();
+        }
     }
 
     void Update()
@@ -30,8 +36,11 @@ public class LevelTimer : MonoBehaviour
             timeRemaining = 0f;
             isRunning = false;
 
-            // notify GameManager
-            gameManager.timeUp = true;
+            // Notify GameManager
+            if (gameManager != null)
+            {
+                gameManager.timeUp = true;
+            }
         }
 
         UpdateUI();
@@ -39,20 +48,34 @@ public class LevelTimer : MonoBehaviour
 
     public void StartCountdown(float startTime)
     {
-        timeRemaining = startTime;
-        isRunning = true;
-        UpdateUI();
+        if (!isRunning) // Only start if not already running
+        {
+            timeRemaining = startTime;
+            isRunning = true;
+            UpdateUI();
+        }
     }
 
     private void UpdateUI()
     {
-        float t = timeRemaining;
+        if (timerText == null) return;
 
-        string minutes = ((int)t / 60).ToString("00");
-        string seconds = ((int)t % 60).ToString("00");
-        string milliseconds = ((int)(t * 100) % 100).ToString("00");
+        float t = Mathf.Max(0f, timeRemaining);
 
-        timerText.text = $"{minutes}:{seconds}.{milliseconds}";
+        // Format: SS:MS (seconds:milliseconds)
+        int seconds = Mathf.FloorToInt(t);
+        int centiseconds = Mathf.FloorToInt((t * 100f) % 100f);
+
+        timerText.text = string.Format("{0:00}:{1:00}", seconds, centiseconds);
     }
 
+    public bool IsRunning()
+    {
+        return isRunning;
+    }
+
+    public float GetTimeRemaining()
+    {
+        return timeRemaining;
+    }
 }
