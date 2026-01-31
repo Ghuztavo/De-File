@@ -11,10 +11,12 @@ public class ParticleAttractionScript : MonoBehaviour
     [SerializeField] public float repulsionStrength = 0.5f; // How strongly particles repel each other at close range
     [SerializeField] public float restDistance = 0.25f; // Preferred minimum distance between particles
 
-    [SerializeField] private float restDensity = 2f; // target density for the fluid
-    [SerializeField] private float pressureStrength = 1.2f; // How strongly density turns into force
+    [SerializeField] private float restDensity = 2f; // target density for the fluid ( low = more spread out / high = more compact )
+    [SerializeField] private float pressureStrength = 1.2f; // How strongly density turns into force ( low = soft / high = hard )
 
     private float density = 0f;
+
+    [SerializeField] float sleepVelocity = 0.5f;
 
     void Awake()
     {
@@ -70,6 +72,16 @@ public class ParticleAttractionScript : MonoBehaviour
             {
                 rb.AddForce(-normal * pressure * pressureStrength);
             }
+        }
+
+        // Sleep check
+        if (rb.linearVelocity.magnitude < sleepVelocity)
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+        }
+        else
+        {
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         }
     }
 
