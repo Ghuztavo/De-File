@@ -118,7 +118,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: -4.04, z: 0}
-  m_LocalScale: {x: 1.157156, y: 1.157156, z: 1.157156}
+  m_LocalScale: {x: 2.4647424, y: 1.2497286, z: 1.157156}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1560878455068041234}
@@ -185,3 +185,5 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   substractMode: 0
   scoreAmount: 1
+  posParticlePrefab: {fileID: 2752765118413264930, guid: 12d6f34876b11ec4e8f8e4fee4adb334, type: 3}
+  negParticlePrefab: {fileID: 651754039886521425, guid: a86f9f61a4411b54384aa45d49084978, type: 3}

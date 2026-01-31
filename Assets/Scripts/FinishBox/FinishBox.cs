@@ -1,25 +1,39 @@
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class FinishBox : MonoBehaviour
 {
-    // There is no game manager yet
     [SerializeField] private GameManager gameManager;
     [SerializeField] private bool substractMode;
     [SerializeField] private int scoreAmount = 1;
 
-    // Detect when particles enter the finish the box, destroy them and increase score
+    [Header("Particle Prefabs (NOT scene objects)")]
+    [SerializeField] private ParticleSystem posParticlePrefab;
+    [SerializeField] private ParticleSystem negParticlePrefab;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Ball"))
-        {
-            Destroy(collision.gameObject);
-            
-            if (gameManager != null)
-            {
-                int finalAmount = substractMode ? -scoreAmount : scoreAmount;
-                gameManager.UpdateScore(finalAmount);
-            }
-        }
+        if (!collision.CompareTag("Ball")) return;
+
+        Vector3 hitPos = collision.transform.position;
+        Destroy(collision.gameObject);
+
+        int finalAmount = substractMode ? -scoreAmount : scoreAmount;
+        if (gameManager != null) gameManager.UpdateScore(finalAmount);
+
+        SpawnHitParticles(hitPos);
+    }
+
+    private void SpawnHitParticles(Vector3 position)
+    {
+        ParticleSystem prefab = substractMode ? negParticlePrefab : posParticlePrefab;
+        if (!prefab) return;
+
+        ParticleSystem ps = Instantiate(prefab, position, Quaternion.identity);
+
+        ps.Play(true);
+
+        // Auto-destroy after it finishes
+        float life = ps.main.duration + ps.main.startLifetime.constantMax;
+        Destroy(ps.gameObject, life + 0.1f);
     }
 }
