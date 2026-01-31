@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
+    s
     [SerializeField] private GameObject StartButton;
     [Header("Game State")]
     public int Score = 0;
