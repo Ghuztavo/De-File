@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a46ac1bfb768d49428fc5fb71e80a3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForceZone
-  forceMagnitude: 15
+  forceMagnitude: 300
 --- !u!61 &797013502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a011b62737fbd104baf037424d545fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  StartButton: {fileID: 0}
+  StartButton: {fileID: 1421466133}
   Score: 0
   Ink: 100
   TotalObjectSpawns: 500
@@ -3700,6 +3700,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ParticleGrid
   cellSize: 0.444
+--- !u!1001 &4624280014680844148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.65176
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2741528
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9034809190290078493, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: m_Name
+      value: GridGenerator (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
 --- !u!1001 &6277689892360140094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3708,10 +3765,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1803310034}
     m_Modifications:
-    - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3584390312216861363, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.61
@@ -3752,26 +3805,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6574587692014462330, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: m_Size.x
-      value: 1.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574587692014462330, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: m_Size.y
-      value: 2.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: cellGapY
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: cellWidth
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: cellHeight
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: redoButton
       value: 
@@ -3784,23 +3817,6 @@ PrefabInstance:
       propertyPath: paintCamera
       value: 
       objectReference: {fileID: 1722764365}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: stringContent
-      value: The tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
-        tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
-        tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
-        tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
-        tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
-        tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvu
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: inkCostPerCell
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
-      propertyPath: lockedTextSize
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9034809190290078493, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: m_Name
       value: GridGenerator
@@ -3828,3 +3844,4 @@ SceneRoots:
   - {fileID: 1909453533}
   - {fileID: 797013503}
   - {fileID: 1803310034}
+  - {fileID: 4624280014680844148}
