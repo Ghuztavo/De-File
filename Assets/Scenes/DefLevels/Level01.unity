@@ -7594,7 +7594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   StartButton: {fileID: 1421466133}
   Score: 0
-  Ink: 100
+  Ink: 70
   maxInk: 1000
   TotalObjectSpawns: 100
   gameStarted: 0

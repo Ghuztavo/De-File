@@ -1,0 +1,2509 @@
+fileFormatVersion: 2
+guid: ea8bffb5d45b1394ca40c6a1122b8266
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2131907390015370080
+    second: censor material_0
+  - first:
+      213: 757470226178785592
+    second: censor material_1
+  - first:
+      213: 2236276804078755770
+    second: censor material_2
+  - first:
+      213: -8216302591432799019
+    second: censor material_3
+  - first:
+      213: -2464313149328346252
+    second: censor material_4
+  - first:
+      213: -1609832684036259902
+    second: censor material_5
+  - first:
+      213: 5820946732642511084
+    second: censor material_6
+  - first:
+      213: 4628852726530192125
+    second: censor material_7
+  - first:
+      213: 8758299289506099953
+    second: censor material_8
+  - first:
+      213: 3170319153581363754
+    second: censor material_9
+  - first:
+      213: 7108182409517644773
+    second: censor material_10
+  - first:
+      213: 4315688281221090410
+    second: censor material_11
+  - first:
+      213: 7055072463214018280
+    second: censor material_12
+  - first:
+      213: 6490518905378303331
+    second: censor material_13
+  - first:
+      213: -599307303716574107
+    second: censor material_14
+  - first:
+      213: -3357689456067477112
+    second: censor material_15
+  - first:
+      213: 2587792864808741334
+    second: censor material_16
+  - first:
+      213: -5948248513365634326
+    second: censor material_17
+  - first:
+      213: 3438796809045668582
+    second: censor material_18
+  - first:
+      213: -4566544741944009348
+    second: censor material_19
+  - first:
+      213: -5707934658110092359
+    second: censor material_20
+  - first:
+      213: -5585746290456056178
+    second: censor material_21
+  - first:
+      213: 7665773424840456102
+    second: censor material_22
+  - first:
+      213: -1448954738522565933
+    second: censor material_23
+  - first:
+      213: 2812617800575413652
+    second: censor material_24
+  - first:
+      213: -5503885214765010864
+    second: censor material_25
+  - first:
+      213: 7276746247275923135
+    second: censor material_26
+  - first:
+      213: 7755690882167581362
+    second: censor material_27
+  - first:
+      213: 907181209023388011
+    second: censor material_28
+  - first:
+      213: -709015574291207864
+    second: censor material_29
+  - first:
+      213: 5053602932326659688
+    second: censor material_30
+  - first:
+      213: -8698966884507909392
+    second: censor material_31
+  - first:
+      213: 5770392083910200578
+    second: censor material_32
+  - first:
+      213: 4810267319445004588
+    second: censor material_33
+  - first:
+      213: 5127395101747518465
+    second: censor material_34
+  - first:
+      213: -641802824010480780
+    second: censor material_35
+  - first:
+      213: -8368454370798479072
+    second: censor material_36
+  - first:
+      213: -122138380049602820
+    second: censor material_37
+  - first:
+      213: -708093043316956142
+    second: censor material_38
+  - first:
+      213: -2922448426680666118
+    second: censor material_39
+  - first:
+      213: -1654689587322893597
+    second: censor material_40
+  - first:
+      213: -4305634446026394672
+    second: censor material_41
+  - first:
+      213: 8501079360645069169
+    second: censor material_42
+  - first:
+      213: -5384732462614751647
+    second: censor material_43
+  - first:
+      213: 2387223910522232239
+    second: censor material_44
+  - first:
+      213: 5822501210063678672
+    second: censor material_45
+  - first:
+      213: 3029924391805320419
+    second: censor material_46
+  - first:
+      213: -3639483542733344468
+    second: censor material_47
+  - first:
+      213: -7334433810362192065
+    second: censor material_48
+  - first:
+      213: -1595150007446763355
+    second: censor material_49
+  - first:
+      213: 1406530843018378124
+    second: censor material_50
+  - first:
+      213: -8398582718862994872
+    second: censor material_51
+  - first:
+      213: -4100659604817148067
+    second: censor material_52
+  - first:
+      213: -2974465252175421806
+    second: censor material_53
+  - first:
+      213: -6762881758712495637
+    second: censor material_54
+  - first:
+      213: 679073864302909530
+    second: censor material_55
+  - first:
+      213: -5866077937430756245
+    second: censor material_56
+  - first:
+      213: -6238185403518887979
+    second: censor material_57
+  - first:
+      213: 7430321903223453271
+    second: censor material_58
+  - first:
+      213: -4381472087303945411
+    second: censor material_59
+  - first:
+      213: 8017619728408119401
+    second: censor material_60
+  - first:
+      213: 4233769146436059112
+    second: censor material_61
+  - first:
+      213: 4361978958818903730
+    second: censor material_62
+  - first:
+      213: 6111270079170543218
+    second: censor material_63
+  - first:
+      213: 1116091355136192421
+    second: censor material_64
+  - first:
+      213: -5035439134836549089
+    second: censor material_65
+  - first:
+      213: -571698839323797011
+    second: censor material_66
+  - first:
+      213: 2189407534453947911
+    second: censor material_67
+  - first:
+      213: -1612051718263098661
+    second: censor material_68
+  - first:
+      213: 5503102156986137103
+    second: censor material_69
+  - first:
+      213: 4373111370669607173
+    second: censor material_70
+  - first:
+      213: -2491677538037808239
+    second: censor material_71
+  - first:
+      213: -2797064625736076621
+    second: censor material_72
+  - first:
+      213: -4707238170491788872
+    second: censor material_73
+  - first:
+      213: 5334856260908146043
+    second: censor material_74
+  - first:
+      213: 3633168191459889724
+    second: censor material_75
+  - first:
+      213: 732701049054038754
+    second: censor material_76
+  - first:
+      213: -3986417637929367160
+    second: censor material_77
+  - first:
+      213: 5102315245343374287
+    second: censor material_78
+  - first:
+      213: 3572470679076509979
+    second: censor material_79
+  - first:
+      213: -1207012051584030273
+    second: censor material_80
+  - first:
+      213: 7015779321404201505
+    second: censor material_81
+  - first:
+      213: -1855246155835738881
+    second: censor material_82
+  - first:
+      213: 5840450205102692655
+    second: censor material_83
+  - first:
+      213: -5916696066971831004
+    second: censor material_84
+  - first:
+      213: 8356653821777995030
+    second: censor material_85
+  - first:
+      213: 7052668762412914785
+    second: censor material_86
+  - first:
+      213: -1620055337145200094
+    second: censor material_87
+  - first:
+      213: 1428507675165096381
+    second: censor material_88
+  - first:
+      213: 4967923399828060560
+    second: censor material_89
+  - first:
+      213: 5691749762663726899
+    second: censor material_90
+  - first:
+      213: -8523571318352916373
+    second: censor material_91
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 60
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: censor material_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06375e3d97e069d10800000000000000
+      internalID: 2131907390015370080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 251
+        width: 193
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831425f4823138a00800000000000000
+      internalID: 757470226178785592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 251
+        width: 18
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf5f8ea7e9d80f10800000000000000
+      internalID: 2236276804078755770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_3
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 251
+        width: 26
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcc68e2354d9fd80800000000000000
+      internalID: -8216302591432799019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 238
+        width: 75
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473b5f64f300dcdd0800000000000000
+      internalID: -2464313149328346252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_5
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 238
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf743004b9b8a9e0800000000000000
+      internalID: -1609832684036259902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 238
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8a0af663828c050800000000000000
+      internalID: 5820946732642511084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 238
+        width: 54
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df23e62b70dfc3040800000000000000
+      internalID: 4628852726530192125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_8
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 238
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f23193eccabb8970800000000000000
+      internalID: 8758299289506099953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_9
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 238
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2295dd197c3ffb20800000000000000
+      internalID: 3170319153581363754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 90
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ebbafd9d3655a260800000000000000
+      internalID: 7108182409517644773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_11
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 225
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ccf7350a764eb30800000000000000
+      internalID: 4315688281221090410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_12
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 225
+        width: 65
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eef282a607a8e160800000000000000
+      internalID: 7055072463214018280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_13
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 225
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36de7036e84f21a50800000000000000
+      internalID: 6490518905378303331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_14
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 225
+        width: 50
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c2daabe25dea7f0800000000000000
+      internalID: -599307303716574107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 212
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8810601ca371761d0800000000000000
+      internalID: -3357689456067477112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_16
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 212
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9273b56efa9e320800000000000000
+      internalID: 2587792864808741334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_17
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 212
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae298150e73937da0800000000000000
+      internalID: -5948248513365634326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_18
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 212
+        width: 95
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2f9e17a7f09bf20800000000000000
+      internalID: 3438796809045668582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_19
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 212
+        width: 50
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ddf7570cf50a0c0800000000000000
+      internalID: -4566544741944009348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 199
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb053e9ba759c0b0800000000000000
+      internalID: -5707934658110092359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 199
+        width: 43
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e29e7e7517b72b0800000000000000
+      internalID: -5585746290456056178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_22
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 199
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7be3c905c426a60800000000000000
+      internalID: 7665773424840456102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_23
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 199
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d25eba975744ebe0800000000000000
+      internalID: -1448954738522565933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_24
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 199
+        width: 58
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49dec3cdcfc680720800000000000000
+      internalID: 2812617800575413652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_25
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 199
+        width: 51
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0503869de854e93b0800000000000000
+      internalID: -5503885214765010864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6c98578223cf460800000000000000
+      internalID: 7276746247275923135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_27
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 184
+        width: 65
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2baa55314cfb1ab60800000000000000
+      internalID: 7755690882167581362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 184
+        width: 87
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b699fbec084f69c00800000000000000
+      internalID: 907181209023388011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_29
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 184
+        width: 54
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849272a77121926f0800000000000000
+      internalID: -709015574291207864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_30
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 184
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866f3318711022640800000000000000
+      internalID: 5053602932326659688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169
+        width: 59
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2050825bf074780800000000000000
+      internalID: -8698966884507909392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_32
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 169
+        width: 91
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d8138070d841050800000000000000
+      internalID: 5770392083910200578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_33
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 169
+        width: 76
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21a03224a081c240800000000000000
+      internalID: 4810267319445004588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_34
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 169
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c1dbecdaa282740800000000000000
+      internalID: 5127395101747518465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47343036bbbd717f0800000000000000
+      internalID: -641802824010480780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_36
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 156
+        width: 84
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029dd7576174ddb80800000000000000
+      internalID: -8368454370798479072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_37
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 156
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6a3bb5ac31e4ef0800000000000000
+      internalID: -122138380049602820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_38
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 156
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214ea25f0295c26f0800000000000000
+      internalID: -708093043316956142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af7bc45c3a06177d0800000000000000
+      internalID: -2922448426680666118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_40
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 143
+        width: 80
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eac416569c5909e0800000000000000
+      internalID: -1654689587322893597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_41
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 143
+        width: 92
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d339e798405f34c0800000000000000
+      internalID: -4305634446026394672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_42
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 143
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17977aa43a6e9f570800000000000000
+      internalID: 8501079360645069169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_43
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 143
+        width: 42
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1665553da569545b0800000000000000
+      internalID: -5384732462614751647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad1ff1af7f112120800000000000000
+      internalID: 2387223910522232239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_45
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 130
+        width: 43
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dca02a600eadc050800000000000000
+      internalID: 5822501210063678672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_46
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 130
+        width: 75
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecf8dd5e247c0a20800000000000000
+      internalID: 3029924391805320419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_47
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 130
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21bf7d2005fd7dc0800000000000000
+      internalID: -3639483542733344468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_48
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 130
+        width: 105
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f2fb81f4bd63a90800000000000000
+      internalID: -7334433810362192065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a88caa0583ecd9e0800000000000000
+      internalID: -1595150007446763355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_50
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 115
+        width: 68
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bbdbf7950058310800000000000000
+      internalID: 1406530843018378124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_51
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 115
+        width: 64
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842df69c38d327b80800000000000000
+      internalID: -8398582718862994872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_52
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 115
+        width: 44
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57841ec0d78717c0800000000000000
+      internalID: -4100659604817148067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_53
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 115
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e575fcc9398b6d0800000000000000
+      internalID: -2974465252175421806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 141
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be109f92fda6522a0800000000000000
+      internalID: -6762881758712495637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_55
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 102
+        width: 98
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58d60ae41e8c6900800000000000000
+      internalID: 679073864302909530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_56
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 102
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b640faa1231879ea0800000000000000
+      internalID: -5866077937430756245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 43
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7da344d638d69a0800000000000000
+      internalID: -6238185403518887979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_58
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 90
+        width: 212
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7563078476ecd1760800000000000000
+      internalID: 7430321903223453271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 91
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3385f2c952e133c0800000000000000
+      internalID: -4381472087303945411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_60
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 76
+        width: 92
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9680eefe9ae444f60800000000000000
+      internalID: 8017619728408119401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_61
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 76
+        width: 68
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef74527b9e51ca30800000000000000
+      internalID: 4233769146436059112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 61
+        width: 40
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6012690ccd88c30800000000000000
+      internalID: 4361978958818903730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_63
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 61
+        width: 97
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27efe6312c79fc450800000000000000
+      internalID: 6111270079170543218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_64
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 61
+        width: 78
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5afe6c79c272d7f00800000000000000
+      internalID: 1116091355136192421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_65
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 61
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a97f729c68e1ab0800000000000000
+      internalID: -5035439134836549089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_66
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 46
+        width: 43
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de91a934feae018f0800000000000000
+      internalID: -571698839323797011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_67
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 46
+        width: 58
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ef0b77d86526e10800000000000000
+      internalID: 2189407534453947911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_68
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 46
+        width: 81
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2be55d087d0a9e0800000000000000
+      internalID: -1612051718263098661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_69
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 46
+        width: 29
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a38dd4142fe5c40800000000000000
+      internalID: 5503102156986137103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_70
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 46
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509cbf33f9960bc30800000000000000
+      internalID: 4373111370669607173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_71
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 46
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193cf6a0b78cb6dd0800000000000000
+      internalID: -2491677538037808239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2b039da84de29d0800000000000000
+      internalID: -2797064625736076621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_73
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 34
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b16daee2d78caeb0800000000000000
+      internalID: -4707238170491788872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_74
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 34
+        width: 77
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7dd2370187390a40800000000000000
+      internalID: 5334856260908146043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_75
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 34
+        width: 21
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c321735883b9b6230800000000000000
+      internalID: 3633168191459889724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_76
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 34
+        width: 61
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea0c6bd8b31b2a00800000000000000
+      internalID: 732701049054038754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_77
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 34
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8894edc77466da8c0800000000000000
+      internalID: -3986417637929367160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb70c2bea01fc640800000000000000
+      internalID: 5102315245343374287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_79
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 20
+        width: 72
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b199ad4a727f39130800000000000000
+      internalID: 3572470679076509979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_80
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 20
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9e7b12fe4df3fe0800000000000000
+      internalID: -1207012051584030273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_81
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 20
+        width: 79
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a14d22f1e0d5160800000000000000
+      internalID: 7015779321404201505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_82
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 20
+        width: 65
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff470866377d046e0800000000000000
+      internalID: -1855246155835738881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f29d08b74827d0150800000000000000
+      internalID: 5840450205102692655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_84
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 7
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425713c664ca3eda0800000000000000
+      internalID: -5916696066971831004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_85
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 7
+        width: 97
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615ecfd106cc8f370800000000000000
+      internalID: 8356653821777995030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_86
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 7
+        width: 99
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1689d1e6fdc10e160800000000000000
+      internalID: 7052668762412914785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_87
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 7
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2221cf811486489e0800000000000000
+      internalID: -1620055337145200094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db97229792413d310800000000000000
+      internalID: 1428507675165096381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_89
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 193
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0993a1ec20c91f440800000000000000
+      internalID: 4967923399828060560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_90
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 0
+        width: 17
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f3cf1c0482dfe40800000000000000
+      internalID: 5691749762663726899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: censor material_91
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 26
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60ddd7bb0136b980800000000000000
+      internalID: -8523571318352916373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      censor material_0: 2131907390015370080
+      censor material_1: 757470226178785592
+      censor material_10: 7108182409517644773
+      censor material_11: 4315688281221090410
+      censor material_12: 7055072463214018280
+      censor material_13: 6490518905378303331
+      censor material_14: -599307303716574107
+      censor material_15: -3357689456067477112
+      censor material_16: 2587792864808741334
+      censor material_17: -5948248513365634326
+      censor material_18: 3438796809045668582
+      censor material_19: -4566544741944009348
+      censor material_2: 2236276804078755770
+      censor material_20: -5707934658110092359
+      censor material_21: -5585746290456056178
+      censor material_22: 7665773424840456102
+      censor material_23: -1448954738522565933
+      censor material_24: 2812617800575413652
+      censor material_25: -5503885214765010864
+      censor material_26: 7276746247275923135
+      censor material_27: 7755690882167581362
+      censor material_28: 907181209023388011
+      censor material_29: -709015574291207864
+      censor material_3: -8216302591432799019
+      censor material_30: 5053602932326659688
+      censor material_31: -8698966884507909392
+      censor material_32: 5770392083910200578
+      censor material_33: 4810267319445004588
+      censor material_34: 5127395101747518465
+      censor material_35: -641802824010480780
+      censor material_36: -8368454370798479072
+      censor material_37: -122138380049602820
+      censor material_38: -708093043316956142
+      censor material_39: -2922448426680666118
+      censor material_4: -2464313149328346252
+      censor material_40: -1654689587322893597
+      censor material_41: -4305634446026394672
+      censor material_42: 8501079360645069169
+      censor material_43: -5384732462614751647
+      censor material_44: 2387223910522232239
+      censor material_45: 5822501210063678672
+      censor material_46: 3029924391805320419
+      censor material_47: -3639483542733344468
+      censor material_48: -7334433810362192065
+      censor material_49: -1595150007446763355
+      censor material_5: -1609832684036259902
+      censor material_50: 1406530843018378124
+      censor material_51: -8398582718862994872
+      censor material_52: -4100659604817148067
+      censor material_53: -2974465252175421806
+      censor material_54: -6762881758712495637
+      censor material_55: 679073864302909530
+      censor material_56: -5866077937430756245
+      censor material_57: -6238185403518887979
+      censor material_58: 7430321903223453271
+      censor material_59: -4381472087303945411
+      censor material_6: 5820946732642511084
+      censor material_60: 8017619728408119401
+      censor material_61: 4233769146436059112
+      censor material_62: 4361978958818903730
+      censor material_63: 6111270079170543218
+      censor material_64: 1116091355136192421
+      censor material_65: -5035439134836549089
+      censor material_66: -571698839323797011
+      censor material_67: 2189407534453947911
+      censor material_68: -1612051718263098661
+      censor material_69: 5503102156986137103
+      censor material_7: 4628852726530192125
+      censor material_70: 4373111370669607173
+      censor material_71: -2491677538037808239
+      censor material_72: -2797064625736076621
+      censor material_73: -4707238170491788872
+      censor material_74: 5334856260908146043
+      censor material_75: 3633168191459889724
+      censor material_76: 732701049054038754
+      censor material_77: -3986417637929367160
+      censor material_78: 5102315245343374287
+      censor material_79: 3572470679076509979
+      censor material_8: 8758299289506099953
+      censor material_80: -1207012051584030273
+      censor material_81: 7015779321404201505
+      censor material_82: -1855246155835738881
+      censor material_83: 5840450205102692655
+      censor material_84: -5916696066971831004
+      censor material_85: 8356653821777995030
+      censor material_86: 7052668762412914785
+      censor material_87: -1620055337145200094
+      censor material_88: 1428507675165096381
+      censor material_89: 4967923399828060560
+      censor material_9: 3170319153581363754
+      censor material_90: 5691749762663726899
+      censor material_91: -8523571318352916373
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
