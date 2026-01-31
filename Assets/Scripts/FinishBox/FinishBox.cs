@@ -4,7 +4,8 @@ public class FinishBox : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private bool substractMode;
-    [SerializeField] private int scoreAmount = 1;
+    [SerializeField] private int posAmount = 1;
+    [SerializeField] private int negScore = 1;
 
     [Header("Particle Prefabs (NOT scene objects)")]
     [SerializeField] private ParticleSystem posParticlePrefab;
@@ -17,7 +18,7 @@ public class FinishBox : MonoBehaviour
         Vector3 hitPos = collision.transform.position;
         Destroy(collision.gameObject);
 
-        int finalAmount = substractMode ? -scoreAmount : scoreAmount;
+        int finalAmount = substractMode ? -negScore : posAmount;
         if (gameManager != null) gameManager.UpdateScore(finalAmount);
 
         SpawnHitParticles(hitPos);
