@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 60ed1e67e5be1a44f8a72cd6b3cea1f3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2945607362319549520
+    second: Score_Graph_0
+  - first:
+      213: 8791247728501558527
+    second: Score_Graph_1
+  - first:
+      213: -3374889787630542381
+    second: Score_Graph_2
+  - first:
+      213: -7907071082158183961
+    second: Score_Graph_3
+  - first:
+      213: 8796892266044528475
+    second: Score_Graph_4
+  - first:
+      213: -1008623000154231026
+    second: Score_Graph_5
+  - first:
+      213: 7180872234773831430
+    second: Score_Graph_6
+  - first:
+      213: -1559216597223878497
+    second: Score_Graph_7
+  - first:
+      213: 6569258541352494817
+    second: Score_Graph_8
+  - first:
+      213: 215385314825486478
+    second: Score_Graph_9
+  - first:
+      213: 5730660193352748406
+    second: Score_Graph_10
+  - first:
+      213: -7470519271994224921
+    second: Score_Graph_11
+  - first:
+      213: -7163948655106677239
+    second: Score_Graph_12
+  - first:
+      213: 8639444701353866161
+    second: Score_Graph_13
+  - first:
+      213: -9157033420223977436
+    second: Score_Graph_14
+  - first:
+      213: 5585085113619395810
+    second: Score_Graph_15
+  - first:
+      213: 2377998062232202049
+    second: Score_Graph_16
+  - first:
+      213: 5494309904527048494
+    second: Score_Graph_17
+  - first:
+      213: -2600754071060233824
+    second: Score_Graph_18
+  - first:
+      213: 7913117621140670537
+    second: Score_Graph_19
+  - first:
+      213: 3439473797425475664
+    second: Score_Graph_20
+  - first:
+      213: 5860881273443289160
+    second: Score_Graph_21
+  - first:
+      213: -2029302016949735100
+    second: Score_Graph_22
+  - first:
+      213: -7006668633727043482
+    second: Score_Graph_23
+  - first:
+      213: 7371305788263882196
+    second: Score_Graph_24
+  - first:
+      213: -3611366062344364752
+    second: Score_Graph_25
+  - first:
+      213: -7852220807186828309
+    second: Score_Graph_26
+  - first:
+      213: 578625774187628830
+    second: Score_Graph_27
+  - first:
+      213: 1826411475045085190
+    second: Score_Graph_28
+  - first:
+      213: -6083004885198361881
+    second: Score_Graph_29
+  - first:
+      213: 9021957472762701622
+    second: Score_Graph_30
+  - first:
+      213: 2507878077975191112
+    second: Score_Graph_31
+  - first:
+      213: 8809912391961458943
+    second: Score_Graph_32
+  - first:
+      213: 4259727105286192114
+    second: Score_Graph_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Score_Graph_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 119
+        width: 23
+        height: 1045
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbfa21e5b91f17d0800000000000000
+      internalID: -2945607362319549520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_1
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1019
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc8bc52b39c00a70800000000000000
+      internalID: 8791247728501558527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1019
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1203c7e9bf921d0800000000000000
+      internalID: -3374889787630542381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1019
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9a2368eb0744290800000000000000
+      internalID: -7907071082158183961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_4
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 1019
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5717f478e6d41a70800000000000000
+      internalID: 8796892266044528475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1019
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fa48ba9b6a002f0800000000000000
+      internalID: -1008623000154231026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_6
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1019
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fd82b604597a360800000000000000
+      internalID: 7180872234773831430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_7
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1019
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90d39214cc8c5ae0800000000000000
+      internalID: -1559216597223878497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_8
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 995
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6240386d1ba2b50800000000000000
+      internalID: 6569258541352494817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_9
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 995
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e80420c7dc33df200800000000000000
+      internalID: 215385314825486478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_10
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 995
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d03416515678f40800000000000000
+      internalID: 5730660193352748406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 995
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee03197d42635890800000000000000
+      internalID: -7470519271994224921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_12
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 995
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906aa3787aa849c90800000000000000
+      internalID: -7163948655106677239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_13
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 989
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3f3d0ae2975e770800000000000000
+      internalID: 8639444701353866161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_14
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4286b2fce9eabe080800000000000000
+      internalID: -9157033420223977436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e43b9dd155328d40800000000000000
+      internalID: 5585085113619395810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_16
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14beaef63a8500120800000000000000
+      internalID: 2377998062232202049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_17
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fbe318fb5bf3c40800000000000000
+      internalID: 5494309904527048494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_18
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1cd46a3f348ebd0800000000000000
+      internalID: -2600754071060233824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_19
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 530
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94849f90d8a01dd60800000000000000
+      internalID: 7913117621140670537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_20
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 530
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0503fc512377bbf20800000000000000
+      internalID: 3439473797425475664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_21
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 244
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84883564778065150800000000000000
+      internalID: 5860881273443289160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_22
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 244
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4413ab9319876d3e0800000000000000
+      internalID: -2029302016949735100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_23
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 244
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668f3d3200053ce90800000000000000
+      internalID: -7006668633727043482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_24
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 244
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dddf304f832c4660800000000000000
+      internalID: 7371305788263882196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_25
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 244
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d101c33b9d1edc0800000000000000
+      internalID: -3611366062344364752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_26
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 239
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3b2b957ce470390800000000000000
+      internalID: -7852220807186828309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_27
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19c6507311b70800800000000000000
+      internalID: 578625774187628830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_28
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60072cf4f87b85910800000000000000
+      internalID: 1826411475045085190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_29
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea29ca3943d49ba0800000000000000
+      internalID: -6083004885198361881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_30
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637a3b6658e643d70800000000000000
+      internalID: 9021957472762701622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_31
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e53b913d5cdc220800000000000000
+      internalID: 2507878077975191112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_32
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 222
+        width: 34
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8bc21c4a8134a70800000000000000
+      internalID: 8809912391961458943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Score_Graph_33
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 222
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fbbfa6bb379d1b30800000000000000
+      internalID: 4259727105286192114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Score_Graph_0: -2945607362319549520
+      Score_Graph_1: 8791247728501558527
+      Score_Graph_10: 5730660193352748406
+      Score_Graph_11: -7470519271994224921
+      Score_Graph_12: -7163948655106677239
+      Score_Graph_13: 8639444701353866161
+      Score_Graph_14: -9157033420223977436
+      Score_Graph_15: 5585085113619395810
+      Score_Graph_16: 2377998062232202049
+      Score_Graph_17: 5494309904527048494
+      Score_Graph_18: -2600754071060233824
+      Score_Graph_19: 7913117621140670537
+      Score_Graph_2: -3374889787630542381
+      Score_Graph_20: 3439473797425475664
+      Score_Graph_21: 5860881273443289160
+      Score_Graph_22: -2029302016949735100
+      Score_Graph_23: -7006668633727043482
+      Score_Graph_24: 7371305788263882196
+      Score_Graph_25: -3611366062344364752
+      Score_Graph_26: -7852220807186828309
+      Score_Graph_27: 578625774187628830
+      Score_Graph_28: 1826411475045085190
+      Score_Graph_29: -6083004885198361881
+      Score_Graph_3: -7907071082158183961
+      Score_Graph_30: 9021957472762701622
+      Score_Graph_31: 2507878077975191112
+      Score_Graph_32: 8809912391961458943
+      Score_Graph_33: 4259727105286192114
+      Score_Graph_4: 8796892266044528475
+      Score_Graph_5: -1008623000154231026
+      Score_Graph_6: 7180872234773831430
+      Score_Graph_7: -1559216597223878497
+      Score_Graph_8: 6569258541352494817
+      Score_Graph_9: 215385314825486478
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
