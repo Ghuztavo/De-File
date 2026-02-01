@@ -1561,6 +1561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   StartButton: {fileID: 0}
   Score: 0
+  NegativeScore: 0
   Ink: 100
   maxInk: 100
   TotalObjectSpawns: 250
@@ -1569,10 +1570,16 @@ MonoBehaviour:
   timeUp: 0
   timer: {fileID: 0}
   inkFillImage: {fileID: 0}
+  positiveScoreBar: {fileID: 0}
+  negativeScoreBar: {fileID: 0}
+  positiveScoreText: {fileID: 0}
+  negativeScoreText: {fileID: 0}
   inkUpdateSpeed: 5
+  scoreBarUpdateSpeed: 8
+  targetPositiveScore: 100
+  targetNegativeScore: 50
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
-  minimumScoreToWin: 100
   resultScreenDelay: 1.5
   slideUpDuration: 0.8
   slideEaseCurve:
@@ -2172,7 +2179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: levelTime
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: TotalObjectSpawns
