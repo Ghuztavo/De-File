@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game State")]
     public float Score = 0;
+    public float NegativeScore = 0;
     public float Ink = 100f;
     public float maxInk = 1000f;
     public int TotalObjectSpawns = 500;
@@ -19,22 +22,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelTimer timer;
     [SerializeField] private Image inkFillImage;
 
+    [Header("Score Bar References")]
+    [SerializeField] private Image positiveScoreBar;
+    [SerializeField] private Image negativeScoreBar;
+    [SerializeField] private TextMeshProUGUI positiveScoreText; // NEW
+    [SerializeField] private TextMeshProUGUI negativeScoreText; // NEW
+
     [Header("Ink UI Settings")]
     [SerializeField] private float inkUpdateSpeed = 5f;
+
+    [Header("Score Bar Settings")]
+    [SerializeField] private float scoreBarUpdateSpeed = 8f;
+    [SerializeField] private float targetPositiveScore = 100f;
+    [SerializeField] private float targetNegativeScore = 50f;
 
     [Header("Win/Lose Settings")]
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
-    [SerializeField] private int minimumScoreToWin = 100; // Adjust based on your level difficulty
-    [SerializeField] private float resultScreenDelay = 1.5f; // Delay after timer ends
-    [SerializeField] private float slideUpDuration = 0.8f; // Animation duration
+    [SerializeField] private float resultScreenDelay = 1.5f;
+    [SerializeField] private float slideUpDuration = 0.8f;
     [SerializeField] private AnimationCurve slideEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     private float targetInkFill;
+    private float targetPositiveBarFill;
+    private float targetNegativeBarFill;
     private bool timerStarted = false;
     private bool levelEnded = false;
 
-    // Store initial positions for animation
     private Vector3 winScreenStartPos;
     private Vector3 loseScreenStartPos;
 
@@ -46,7 +60,21 @@ public class GameManager : MonoBehaviour
             inkFillImage.fillAmount = targetInkFill;
         }
 
-        // Store initial positions and hide screens
+        if (positiveScoreBar != null)
+        {
+            targetPositiveBarFill = 0f;
+            positiveScoreBar.fillAmount = 0f;
+        }
+
+        if (negativeScoreBar != null)
+        {
+            targetNegativeBarFill = 0f;
+            negativeScoreBar.fillAmount = 0f;
+        }
+
+        // Initialize score text displays
+        UpdateScoreTexts();
+
         if (winScreen != null)
         {
             winScreenStartPos = winScreen.GetComponent<RectTransform>().anchoredPosition;
@@ -62,7 +90,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Only start timer once when game starts
         if (gameStarted && !timerStarted)
         {
             if (timer != null)
@@ -73,14 +100,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Check if timer ended and show result screen
         if (timeUp && !levelEnded)
         {
             levelEnded = true;
             StartCoroutine(ShowResultScreen());
         }
 
-        // Smoothly update ink UI with easing
+        if (NegativeScore >= targetNegativeScore && !levelEnded)
+        {
+            levelEnded = true;
+            timeUp = true;
+            Debug.Log("Player lost due to negative score!");
+            StartCoroutine(ShowResultScreen());
+        }
+
         if (inkFillImage != null)
         {
             targetInkFill = Mathf.Clamp01(Ink / maxInk);
@@ -90,49 +123,75 @@ public class GameManager : MonoBehaviour
                 Time.deltaTime * inkUpdateSpeed
             );
         }
+
+        if (positiveScoreBar != null)
+        {
+            targetPositiveBarFill = Mathf.Clamp01(Score / targetPositiveScore);
+            positiveScoreBar.fillAmount = Mathf.Lerp(
+                positiveScoreBar.fillAmount,
+                targetPositiveBarFill,
+                Time.deltaTime * scoreBarUpdateSpeed
+            );
+        }
+
+        if (negativeScoreBar != null)
+        {
+            targetNegativeBarFill = Mathf.Clamp01(NegativeScore / targetNegativeScore);
+            negativeScoreBar.fillAmount = Mathf.Lerp(
+                negativeScoreBar.fillAmount,
+                targetNegativeBarFill,
+                Time.deltaTime * scoreBarUpdateSpeed
+            );
+        }
+
+        // Update score text displays
+        UpdateScoreTexts();
+    }
+
+    private void UpdateScoreTexts()
+    {
+        // Update positive score text (e.g., "45/100")
+        if (positiveScoreText != null)
+        {
+            positiveScoreText.text = $"{Mathf.FloorToInt(Score)}/{Mathf.FloorToInt(targetPositiveScore)}";
+        }
+
+        // Update negative score text (e.g., "12/50")
+        if (negativeScoreText != null)
+        {
+            negativeScoreText.text = $"{Mathf.FloorToInt(NegativeScore)}/{Mathf.FloorToInt(targetNegativeScore)}";
+        }
     }
 
     private IEnumerator ShowResultScreen()
     {
-        // Wait a moment after timer ends
         yield return new WaitForSeconds(resultScreenDelay);
 
-        // Determine win or lose
-        bool didWin = Score >= minimumScoreToWin;
+        bool didWin = Score >= targetPositiveScore && NegativeScore < targetNegativeScore;
 
         GameObject screenToShow = didWin ? winScreen : loseScreen;
         Vector3 startPos = didWin ? winScreenStartPos : loseScreenStartPos;
 
         if (screenToShow != null)
         {
-            Debug.Log(didWin ? "Player Won! Score: " + Score : "Player Lost. Score: " + Score);
+            Debug.Log(didWin ? "Player Won! Score: " + Score : "Player Lost. Positive Score: " + Score + " | Negative Score: " + NegativeScore);
 
             RectTransform rectTransform = screenToShow.GetComponent<RectTransform>();
-
-            // Position screen below the canvas (off-screen)
             Vector3 offScreenPos = startPos + new Vector3(0, -Screen.height, 0);
             rectTransform.anchoredPosition = offScreenPos;
-
-            // Activate the screen
             screenToShow.SetActive(true);
 
-            // Animate slide up
             float elapsed = 0f;
 
             while (elapsed < slideUpDuration)
             {
                 elapsed += Time.deltaTime;
                 float t = elapsed / slideUpDuration;
-
-                // Apply easing curve for smooth animation
                 float easedT = slideEaseCurve.Evaluate(t);
-
                 rectTransform.anchoredPosition = Vector3.Lerp(offScreenPos, startPos, easedT);
-
                 yield return null;
             }
 
-            // Ensure final position is exact
             rectTransform.anchoredPosition = startPos;
         }
     }
@@ -148,14 +207,12 @@ public class GameManager : MonoBehaviour
     {
         Ink -= amount;
         Ink = Mathf.Clamp(Ink, 0f, maxInk);
-        Debug.Log("Ink used. Remaining: " + Ink);
     }
 
     public void AddInk(float amount)
     {
         Ink += amount;
         Ink = Mathf.Clamp(Ink, 0f, maxInk);
-        Debug.Log("Ink added. Current: " + Ink);
     }
 
     public bool HasEnoughInk(float amount)
@@ -165,14 +222,25 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScore(float amount)
     {
-        Score += amount;
-        Debug.Log("Score Updated: " + Score);
+        if (amount > 0)
+        {
+            Score += amount;
+            Debug.Log("Positive Score Updated: " + Score);
+        }
+        else
+        {
+            NegativeScore += Mathf.Abs(amount);
+            Debug.Log("Negative Score Updated: " + NegativeScore);
+        }
     }
 
     public void Restart()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMain()
+    {
+        SceneManager.LoadScene(0);
     }
 }
