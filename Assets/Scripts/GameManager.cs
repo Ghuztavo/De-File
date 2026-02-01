@@ -43,6 +43,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float slideUpDuration = 0.8f;
     [SerializeField] private AnimationCurve slideEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource STAMPaudioSource;
+    [SerializeField] private AudioClip stampSound;
+
+    [SerializeField] private AudioSource TimerSource;
+    [SerializeField] private AudioClip timerSound;
+
     private float targetInkFill;
     private float targetPositiveBarFill;
     private float targetNegativeBarFill;
@@ -51,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private Vector3 winScreenStartPos;
     private Vector3 loseScreenStartPos;
+    private bool soundsPlayed = false;
 
     void Start()
     {
@@ -102,8 +110,10 @@ public class GameManager : MonoBehaviour
 
         if (timeUp && !levelEnded)
         {
+            if (timeUp) TimerSource.PlayOneShot(timerSound);
             levelEnded = true;
             StartCoroutine(ShowResultScreen());
+
         }
 
         if (NegativeScore >= targetNegativeScore && !levelEnded)
@@ -199,8 +209,13 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
-        StartButton.SetActive(false);
+        //StartButton.SetActive(false);
         Debug.Log("Game started!");
+
+        if(!soundsPlayed) {
+            STAMPaudioSource.PlayOneShot(stampSound);
+            soundsPlayed = true;
+        }
     }
 
     public void UseInk(float amount)

@@ -10,6 +10,8 @@ public class DestroyBallOnTouch : MonoBehaviour
     [Header("Particle Prefabs (NOT scene objects)")]
     [SerializeField] private ParticleSystem posParticlePrefab;
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag(targetTag)) return;
@@ -18,7 +20,6 @@ public class DestroyBallOnTouch : MonoBehaviour
         Destroy(collision.gameObject);
 
         if (gameManager != null) gameManager.UpdateScore(amountToIncrease);
-
         SpawnHitParticles(hitPos);
     }
 

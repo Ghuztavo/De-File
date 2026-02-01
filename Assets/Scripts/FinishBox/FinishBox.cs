@@ -11,6 +11,10 @@ public class FinishBox : MonoBehaviour
     [SerializeField] private ParticleSystem posParticlePrefab;
     [SerializeField] private ParticleSystem negParticlePrefab;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hitSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Ball")) return;
@@ -20,6 +24,8 @@ public class FinishBox : MonoBehaviour
 
         float finalAmount = substractMode ? -negScore : posAmount;
         if (gameManager != null) gameManager.UpdateScore(finalAmount);
+
+        audioSource.PlayOneShot(hitSound);
 
         SpawnHitParticles(hitPos);
     }
