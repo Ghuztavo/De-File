@@ -8,6 +8,7 @@ public class KeyWord : MonoBehaviour
     [Header("Text")]
     [SerializeField] private TMP_Text textTarget;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private ParticleSystem discover;
     [TextArea]
     [SerializeField] private string populateText = "Keyword";
 
@@ -33,10 +34,14 @@ public class KeyWord : MonoBehaviour
     private int _collisionCount;
     private bool _scoreAwarded;
 
+    private Collider2D _myCollider;
+    private Vector3 _hitPos; // <-- store last hit position here
+
     private void Awake()
     {
-        if (!textTarget) textTarget = GetComponentInChildren<TMP_Text>();
+        _myCollider = GetComponent<Collider2D>();
 
+        if (!textTarget) textTarget = GetComponentInChildren<TMP_Text>();
         if (!textTarget)
         {
             Debug.LogError($"{nameof(KeyWord)}: No TMP_Text found. Assign Text Target or put TMP under this object.");
@@ -46,7 +51,6 @@ public class KeyWord : MonoBehaviour
 
         textTarget.text = populateText;
         _startColor = textTarget.color;
-
     }
 
     private void OnValidate()
@@ -67,7 +71,15 @@ public class KeyWord : MonoBehaviour
 
         // Count only once per entry
         if (_inside.Add(other))
+        {
+            // Best guess for "hit position" in trigger world:
+            // closest point on THIS collider to the OTHER collider's center
+            Vector2 otherCenter = other.bounds.center;
+            _hitPos = _myCollider.ClosestPoint(otherCenter);
+            _hitPos.z = 0f; // keep particles in 2D plane
+
             RegisterCollision();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -86,17 +98,13 @@ public class KeyWord : MonoBehaviour
 
         _collisionCount++;
 
-        // Progress from 0..1 based on collisions
         float t = Mathf.Clamp01(_collisionCount / (float)collisionsRequired);
-
-        // Each collision gets closer to target color
         textTarget.color = Color.Lerp(_startColor, targetColor, t);
 
-        // Award score only when requirement is met
         if (_collisionCount >= collisionsRequired)
         {
             _scoreAwarded = true;
-            textTarget.color = targetColor; // snap to final color
+            textTarget.color = targetColor;
             ScoreAdd(scoreToAdd);
         }
     }
@@ -110,8 +118,10 @@ public class KeyWord : MonoBehaviour
 
     private void ScoreAdd(int amount)
     {
-        int finalAmount = amount;
-        if (gameManager != null) gameManager.UpdateScore(finalAmount);
-        Debug.Log($"Score +{amount} (hook this into your score system)");
+        if (discover)
+            Instantiate(discover, _hitPos, Quaternion.identity);
+
+        if (gameManager != null)
+            gameManager.UpdateScore(amount);
     }
 }

@@ -141,8 +141,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -215,7 +215,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.2634254, y: -0.2755252}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyWord
   textTarget: {fileID: 6003888807782522429}
   gameManager: {fileID: 0}
+  discover: {fileID: 2752765118413264930, guid: 122ce58e64c8d864280f09369b08b0bb, type: 3}
   populateText: KeyWord
   targetColor: {r: 1, g: 0.017341077, b: 0.015686274, a: 1}
   collisionsRequired: 5
