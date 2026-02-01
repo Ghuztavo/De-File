@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 6cf03a212cee4e64482421a047865a43
+guid: f5ee943c07306814ea4adbbaa6e886c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2823443772298276286
-    second: TankMan_0
+      213: 3694241174251117191
+    second: GridTexture_0
+  - first:
+      213: -6473076889893152179
+    second: GridTexture_1
+  - first:
+      213: 8136350722929862304
+    second: GridTexture_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +52,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TankMan_0
+      name: GridTexture_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1614
-        height: 1080
+        y: 5
+        width: 64
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2425fdc29dc11d8d0800000000000000
-      internalID: -2823443772298276286
+      spriteID: 78a1cd966c4944330800000000000000
+      internalID: 3694241174251117191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridTexture_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 57
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ad02e4dd20b26a0800000000000000
+      internalID: -6473076889893152179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GridTexture_2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a62a30dfdf1ae070800000000000000
+      internalID: 8136350722929862304
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TankMan_0: -2823443772298276286
+      GridTexture_0: 3694241174251117191
+      GridTexture_1: -6473076889893152179
+      GridTexture_2: 8136350722929862304
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

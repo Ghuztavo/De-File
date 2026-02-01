@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6cf03a212cee4e64482421a047865a43
+guid: 60e6752a64ba6b04ab6bea75be7de9be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2823443772298276286
-    second: TankMan_0
+      213: -5668518402485374812
+    second: Frame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TankMan_0
+      name: Frame_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1614
-        height: 1080
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2425fdc29dc11d8d0800000000000000
-      internalID: -2823443772298276286
+      spriteID: 4a03819cb806551b0800000000000000
+      internalID: -5668518402485374812
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TankMan_0: -2823443772298276286
+      Frame_0: -5668518402485374812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

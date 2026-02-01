@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 6cf03a212cee4e64482421a047865a43
+guid: bc75bd8b3e656ee48980505d708e9079
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2823443772298276286
-    second: TankMan_0
+      213: -5815789002041459027
+    second: Frame2_0
+  - first:
+      213: 5241482288273855861
+    second: Frame2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TankMan_0
+      name: Frame2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1614
-        height: 1080
+        x: 1
+        y: 14
+        width: 252
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2425fdc29dc11d8d0800000000000000
-      internalID: -2823443772298276286
+      spriteID: daef1bc47ba2a4fa0800000000000000
+      internalID: -5815789002041459027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame2_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 250
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5759011ee5c7db840800000000000000
+      internalID: 5241482288273855861
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TankMan_0: -2823443772298276286
+      Frame2_0: -5815789002041459027
+      Frame2_1: 5241482288273855861
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
