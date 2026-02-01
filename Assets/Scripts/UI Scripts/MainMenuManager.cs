@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     public void StartButton()
     {
         Debug.Log("Start Button Pressed");
+        SceneManager.LoadScene(4); // We always start on level 1 from the mian menu
     }
 
     public void QuitButton()
@@ -28,16 +30,19 @@ public class MainMenuManager : MonoBehaviour
     public void LevelSelect()
     {
         Debug.Log("Level Select Button Pressed");
+        SceneManager.LoadScene(1);
     }
 
     public void YourJob()
     {
         Debug.Log("Your Job Button Pressed");
+        SceneManager.LoadScene(2);
     }
 
     public void Credits()
     {
         Debug.Log("Credits Button Pressed");
+        SceneManager.LoadScene(3);
     }
 
     public void Options()

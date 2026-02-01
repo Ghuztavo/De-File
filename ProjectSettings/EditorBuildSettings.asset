@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DefLevels/LevelSelect.unity
     guid: ab7db644ca49c1343813313380cdb81c
+  - enabled: 1
+    path: Assets/Scenes/DefLevels/Tutorial.unity
+    guid: 8e40f0013d2823b46b83d45ac47d9d6b
+  - enabled: 1
+    path: Assets/Scenes/DefLevels/Credits.unity
+    guid: 0cb1dd1d8f7c2ec4b992b8d746bb4743
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
