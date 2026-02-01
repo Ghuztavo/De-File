@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject StartButton;
 
     [Header("Game State")]
-    public int Score = 0;
+    public float Score = 0;
     public float Ink = 100f;
     public float maxInk = 1000f;
     public int TotalObjectSpawns = 500;
@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour
         return Ink >= amount;
     }
 
-    public void UpdateScore(int amount)
+    public void UpdateScore(float amount)
     {
         Score += amount;
         Debug.Log("Score Updated: " + Score);
