@@ -9146,7 +9146,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: Ink
-      value: 40
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: hitSound

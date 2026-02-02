@@ -4561,6 +4561,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: Ink
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: levelTime
       value: 15
       objectReference: {fileID: 0}
