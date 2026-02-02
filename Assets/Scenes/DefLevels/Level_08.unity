@@ -643,6 +643,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2921450021765424888, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: Ink
       value: 100
@@ -670,6 +674,10 @@ PrefabInstance:
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: targetPositiveScore
       value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545597655696495933, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6182334502203403319, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: m_Name
@@ -756,7 +764,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6686666220972344565, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+    - {fileID: 8014558715523540010, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
