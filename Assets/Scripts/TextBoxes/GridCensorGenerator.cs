@@ -41,6 +41,7 @@ public class GridCensorGenerator : MonoBehaviour
 
     [Header("Redo Button")]
     public GameObject redoButton;
+    [SerializeField] private UnityEngine.UI.Button redoUIButton;
 
     [Header("Debug")]
     public bool showDebugLogs = true;
@@ -110,6 +111,7 @@ public class GridCensorGenerator : MonoBehaviour
                 {
                     lastCensoredCells.Clear();
                     canRedo = false;
+                    UpdateRedoButtonState();
                 }
 
                 PaintAtScreenPosition(screenPos);
@@ -120,6 +122,7 @@ public class GridCensorGenerator : MonoBehaviour
             if (lastCensoredCells.Count > 0)
             {
                 canRedo = true;
+                UpdateRedoButtonState();
                 if (showDebugLogs)
                     Debug.Log($"Paint action completed. {lastCensoredCells.Count} cells censored. Redo available.");
             }
@@ -190,7 +193,7 @@ public class GridCensorGenerator : MonoBehaviour
         return redoButtonCollider.OverlapPoint(new Vector2(worldPoint.x, worldPoint.y));
     }
 
-    private void PerformRedo()
+    public void PerformRedo()
     {
         if (!canRedo || lastCensoredCells.Count == 0)
         {
@@ -218,8 +221,17 @@ public class GridCensorGenerator : MonoBehaviour
 
         lastCensoredCells.Clear();
         canRedo = false;
+        UpdateRedoButtonState();
 
         QueueRefreshCensorComposite();
+    }
+
+    private void UpdateRedoButtonState()
+    {
+        if (redoUIButton != null)
+        {
+            redoUIButton.interactable = canRedo;
+        }
     }
 
     private void PaintAtScreenPosition(Vector2 screenPos)
