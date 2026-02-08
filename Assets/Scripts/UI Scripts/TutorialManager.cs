@@ -57,7 +57,7 @@ public class TutorialManager : MonoBehaviour
 
     public void GoToPage(int pageIndex)
     {
-        // Go to a specific page (0-indexed)
+        // Go to a specific page
         if (pageIndex >= 0 && pageIndex < tutorialPages.Length)
         {
             currentPageIndex = pageIndex;
@@ -72,6 +72,13 @@ public class TutorialManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(0); // Load main menu (scene index 0)
+        if(SceneTransition.Instance != null)
+    {
+            SceneTransition.Instance.LoadScene(0);
+        }
+    else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

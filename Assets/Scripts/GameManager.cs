@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
     [Header("Score Bar References")]
     [SerializeField] private Image positiveScoreBar;
     [SerializeField] private Image negativeScoreBar;
-    [SerializeField] private TextMeshProUGUI positiveScoreText; // NEW
-    [SerializeField] private TextMeshProUGUI negativeScoreText; // NEW
+    [SerializeField] private TextMeshProUGUI positiveScoreText;
+    [SerializeField] private TextMeshProUGUI negativeScoreText;
 
     [Header("Ink UI Settings")]
     [SerializeField] private float inkUpdateSpeed = 5f;
@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource STAMPaudioSource;
     [SerializeField] private AudioClip stampSound;
-
     [SerializeField] private AudioSource TimerSource;
     [SerializeField] private AudioClip timerSound;
 
@@ -55,7 +54,6 @@ public class GameManager : MonoBehaviour
     private float targetNegativeBarFill;
     private bool timerStarted = false;
     private bool levelEnded = false;
-
     private Vector3 winScreenStartPos;
     private Vector3 loseScreenStartPos;
     private bool soundsPlayed = false;
@@ -80,7 +78,6 @@ public class GameManager : MonoBehaviour
             negativeScoreBar.fillAmount = 0f;
         }
 
-        // Initialize score text displays
         UpdateScoreTexts();
 
         if (winScreen != null)
@@ -113,7 +110,6 @@ public class GameManager : MonoBehaviour
             if (timeUp) TimerSource.PlayOneShot(timerSound);
             levelEnded = true;
             StartCoroutine(ShowResultScreen());
-
         }
 
         if (NegativeScore >= targetNegativeScore && !levelEnded)
@@ -154,19 +150,16 @@ public class GameManager : MonoBehaviour
             );
         }
 
-        // Update score text displays
         UpdateScoreTexts();
     }
 
     private void UpdateScoreTexts()
     {
-        // Update positive score text (e.g., "45/100")
         if (positiveScoreText != null)
         {
             positiveScoreText.text = $"{Mathf.FloorToInt(Score)}/{Mathf.FloorToInt(targetPositiveScore)}";
         }
 
-        // Update negative score text (e.g., "12/50")
         if (negativeScoreText != null)
         {
             negativeScoreText.text = $"{Mathf.FloorToInt(NegativeScore)}/{Mathf.FloorToInt(targetNegativeScore)}";
@@ -209,10 +202,10 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStarted = true;
-        //StartButton.SetActive(false);
         Debug.Log("Game started!");
 
-        if(!soundsPlayed) {
+        if (!soundsPlayed)
+        {
             STAMPaudioSource.PlayOneShot(stampSound);
             soundsPlayed = true;
         }
@@ -251,11 +244,25 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (SceneTransition.Instance != null)
+        {
+            SceneTransition.Instance.ReloadCurrentScene();
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void BackToMain()
     {
-        SceneManager.LoadScene(0);
+        if (SceneTransition.Instance != null)
+        {
+            SceneTransition.Instance.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

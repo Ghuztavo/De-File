@@ -3,22 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
     public void StartButton()
     {
         Debug.Log("Start Button Pressed");
-        SceneManager.LoadScene(4); // We always start on level 1 from the mian menu
+        LoadSceneWithTransition(4); // Level 1
     }
 
     public void QuitButton()
@@ -30,23 +29,31 @@ public class MainMenuManager : MonoBehaviour
     public void LevelSelect()
     {
         Debug.Log("Level Select Button Pressed");
-        SceneManager.LoadScene(1);
+        LoadSceneWithTransition(1);
     }
 
     public void YourJob()
     {
         Debug.Log("Your Job Button Pressed");
-        SceneManager.LoadScene(2);
+        LoadSceneWithTransition(2);
     }
 
     public void Credits()
     {
         Debug.Log("Credits Button Pressed");
-        SceneManager.LoadScene(3);
+        LoadSceneWithTransition(3);
     }
 
-    public void Options()
+
+    private void LoadSceneWithTransition(int sceneIndex)
     {
-        Debug.Log("Options Button Pressed");
+        if (SceneTransition.Instance != null)
+        {
+            SceneTransition.Instance.LoadScene(sceneIndex);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 }
