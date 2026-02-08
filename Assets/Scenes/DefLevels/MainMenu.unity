@@ -392,6 +392,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  delayBeforeReveal: 0.2
   style: 0
   barColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!225 &428452449

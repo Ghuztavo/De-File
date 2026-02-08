@@ -14,6 +14,7 @@ public class SceneTransition : MonoBehaviour
     [Header("Animation Settings")]
     [SerializeField] private float transitionDuration = 0.8f;
     [SerializeField] private AnimationCurve easeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private float delayBeforeReveal = 0.15f; // NEW - small pause before revealing new scene
 
     [Header("Bar Style")]
     [SerializeField] private TransitionStyle style = TransitionStyle.SlideRight;
@@ -52,7 +53,7 @@ public class SceneTransition : MonoBehaviour
         if (canvasGroup != null)
         {
             canvasGroup.alpha = 0f;
-            canvasGroup.blocksRaycasts = false; 
+            canvasGroup.blocksRaycasts = false;
         }
     }
 
@@ -60,7 +61,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (!isTransitioning)
         {
-            StartCoroutine(TransitionToScene(sceneIndex));
+            StartCoroutine(TransitionToSceneAsync(sceneIndex));
         }
     }
 
@@ -68,7 +69,7 @@ public class SceneTransition : MonoBehaviour
     {
         if (!isTransitioning)
         {
-            StartCoroutine(TransitionToScene(sceneName));
+            StartCoroutine(TransitionToSceneAsync(sceneName));
         }
     }
 
@@ -76,29 +77,68 @@ public class SceneTransition : MonoBehaviour
     {
         if (!isTransitioning)
         {
-            StartCoroutine(TransitionToScene(SceneManager.GetActiveScene().buildIndex));
+            StartCoroutine(TransitionToSceneAsync(SceneManager.GetActiveScene().buildIndex));
         }
     }
 
-    private IEnumerator TransitionToScene(int sceneIndex)
+    // IMPROVED - Async scene loading for smoother transitions
+    private IEnumerator TransitionToSceneAsync(int sceneIndex)
     {
         isTransitioning = true;
 
+        // Transition IN (cover screen)
         yield return StartCoroutine(AnimateTransition(true));
-        SceneManager.LoadScene(sceneIndex);
-        yield return null;
+
+        // Load scene asynchronously (doesn't block main thread)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
+        asyncLoad.allowSceneActivation = false;
+
+        // Wait until scene is almost loaded (90%)
+        while (asyncLoad.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        // Activate the scene
+        asyncLoad.allowSceneActivation = true;
+
+        // Wait for scene to fully activate
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // IMPORTANT - Give the new scene time to initialize
+        yield return new WaitForSecondsRealtime(delayBeforeReveal);
+
+        // Transition OUT (reveal screen)
         yield return StartCoroutine(AnimateTransition(false));
 
         isTransitioning = false;
     }
 
-    private IEnumerator TransitionToScene(string sceneName)
+    private IEnumerator TransitionToSceneAsync(string sceneName)
     {
         isTransitioning = true;
 
         yield return StartCoroutine(AnimateTransition(true));
-        SceneManager.LoadScene(sceneName);
-        yield return null;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+
+        while (asyncLoad.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        asyncLoad.allowSceneActivation = true;
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(delayBeforeReveal);
         yield return StartCoroutine(AnimateTransition(false));
 
         isTransitioning = false;
@@ -109,7 +149,7 @@ public class SceneTransition : MonoBehaviour
         if (canvasGroup == null || barRect == null) yield break;
 
         canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true; 
+        canvasGroup.blocksRaycasts = true;
 
         Vector2 startPos = Vector2.zero;
         Vector2 endPos = Vector2.zero;
@@ -160,10 +200,11 @@ public class SceneTransition : MonoBehaviour
 
         float elapsed = 0f;
 
+        // IMPROVED - Ensure smooth animation even if frame rate drops
         while (elapsed < transitionDuration)
         {
             elapsed += Time.unscaledDeltaTime;
-            float t = elapsed / transitionDuration;
+            float t = Mathf.Clamp01(elapsed / transitionDuration);
             float easedT = easeCurve.Evaluate(t);
 
             barRect.anchoredPosition = Vector2.Lerp(startPos, endPos, easedT);
@@ -171,12 +212,16 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
 
+        // Ensure final position is exact
         barRect.anchoredPosition = endPos;
+
+        // Small delay to ensure animation completes visually
+        yield return null;
 
         if (!isClosing)
         {
             canvasGroup.alpha = 0f;
-            canvasGroup.blocksRaycasts = false; 
+            canvasGroup.blocksRaycasts = false;
         }
     }
 }
