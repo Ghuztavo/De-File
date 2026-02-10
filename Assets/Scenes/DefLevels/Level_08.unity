@@ -435,6 +435,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Son agreed others exeter period myself few yet nature. Mention mr manners
         opinion if garrets enabled. To an occasional dissimilar impossible sentiments.
@@ -643,6 +647,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642650725554817709, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2921450021765424888, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -904,6 +912,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.20015535
       objectReference: {fileID: 0}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoButton
+      value: 
+      objectReference: {fileID: 1538341386}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: '                                                                                                                '
@@ -2367,6 +2383,10 @@ PrefabInstance:
       propertyPath: paintCamera
       value: 
       objectReference: {fileID: 1556556456}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'With my them if up many. Lain week nay she them her she. Extremity
@@ -4715,6 +4735,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'One advanced diverted domestic sex repeated bringing you old. Possible
         procured her trifling laughter thoughts property she met way. Companions
@@ -5461,6 +5485,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: She who arrival end how fertile enabled. Brother she add yet see minuter
         natural smiling article painted. Themselves at dispatched interested insensible
@@ -5649,6 +5677,10 @@ PrefabInstance:
       propertyPath: paintCamera
       value: 
       objectReference: {fileID: 1556556456}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Affronting discretion as do is announcing. Now months esteem oppose
@@ -6556,6 +6588,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1795863566}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: Must you with him from him her were more. In eldest be it result should
         remark vanity square. Unpleasant especially assistance sufficient he comparison
@@ -7024,6 +7060,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1795863566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3503535670442157905, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+  m_PrefabInstance: {fileID: 143735953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &1807010792
 PrefabInstance:
   m_ObjectHideFlags: 0

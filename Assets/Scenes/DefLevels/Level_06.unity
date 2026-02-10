@@ -4522,6 +4522,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1722764365}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1957161419}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: "Lantern-index memoryfold, the archive walks backward through a velvet
         firewall, while street      s file themself       der \u201Csensit     .\u201D   
@@ -8730,6 +8734,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1722764365}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1957161419}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: The tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
         tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe
@@ -10350,6 +10358,17 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 650505693679726758, guid: 5f6e1ba1d332fdb4e86e35b5c2ceca01, type: 3}
   m_PrefabInstance: {fileID: 1801534468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1957161419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3503535670442157905, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+  m_PrefabInstance: {fileID: 2564726628032216596}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!4 &1991950620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5439798435708189180, guid: fa34adc421839624cb03db93f052d608, type: 3}
@@ -10794,6 +10813,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642650725554817709, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: Ink
       value: 65
@@ -10805,6 +10828,14 @@ PrefabInstance:
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: levelTime
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: TotalObjectSpawns
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: targetPositiveScore
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6182334502203403319, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: m_Name
@@ -11045,6 +11076,10 @@ PrefabInstance:
       propertyPath: paintCamera
       value: 
       objectReference: {fileID: 1722764365}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1957161419}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: The tree fell in the forest and no wone wsa there to see vfdsgsVDD'nvsd;BVSFuksVFkveakjcbvdszilcvasEbciy:SIGVFbaeYPIv;fcHEABClyiaKVGbcPYEIA:UCbgvseui;vbRSNGRdfzbhgfgzdfhzdffdhzfhfdsgdfgzdfgzdfgzdfbjdlujhigsbkfdsvkgiubsdGVbkyfdsvbkyfdVbiudvsbivdsbuvfbukivfibuvzsbvuThe

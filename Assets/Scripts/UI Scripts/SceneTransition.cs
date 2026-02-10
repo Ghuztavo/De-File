@@ -14,7 +14,7 @@ public class SceneTransition : MonoBehaviour
     [Header("Animation Settings")]
     [SerializeField] private float transitionDuration = 0.8f;
     [SerializeField] private AnimationCurve easeCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
-    [SerializeField] private float delayBeforeReveal = 0.15f; // NEW - small pause before revealing new scene
+    [SerializeField] private float delayBeforeReveal = 0.15f;
 
     [Header("Bar Style")]
     [SerializeField] private TransitionStyle style = TransitionStyle.SlideRight;
@@ -81,15 +81,13 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    // IMPROVED - Async scene loading for smoother transitions
     private IEnumerator TransitionToSceneAsync(int sceneIndex)
     {
         isTransitioning = true;
 
-        // Transition IN (cover screen)
         yield return StartCoroutine(AnimateTransition(true));
 
-        // Load scene asynchronously (doesn't block main thread)
+        // Load scene asynchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneIndex);
         asyncLoad.allowSceneActivation = false;
 
@@ -99,19 +97,15 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
 
-        // Activate the scene
         asyncLoad.allowSceneActivation = true;
 
-        // Wait for scene to fully activate
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
 
-        // IMPORTANT - Give the new scene time to initialize
         yield return new WaitForSecondsRealtime(delayBeforeReveal);
 
-        // Transition OUT (reveal screen)
         yield return StartCoroutine(AnimateTransition(false));
 
         isTransitioning = false;
@@ -200,7 +194,6 @@ public class SceneTransition : MonoBehaviour
 
         float elapsed = 0f;
 
-        // IMPROVED - Ensure smooth animation even if frame rate drops
         while (elapsed < transitionDuration)
         {
             elapsed += Time.unscaledDeltaTime;
@@ -212,10 +205,9 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
 
-        // Ensure final position is exact
+        // final position is exact
         barRect.anchoredPosition = endPos;
 
-        // Small delay to ensure animation completes visually
         yield return null;
 
         if (!isClosing)

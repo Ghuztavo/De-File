@@ -1685,6 +1685,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1914261557}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Click here and redact Click here and redact Click here and redact Click
         here and redact Click here and redact Click here and redact Click here and
@@ -2005,6 +2009,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1914261557}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Click here and redact Click here and redact Click here and redact Click
         here and redact Click here and redact Click here and redact Click here and
@@ -2288,6 +2296,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642650725554817709, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: Ink
       value: 100
@@ -2303,6 +2315,10 @@ PrefabInstance:
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: TotalObjectSpawns
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: targetPositiveScore
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6182334502203403319, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: m_Name
@@ -3012,6 +3028,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1556556456}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1914261557}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Click here and redact Click here and redact Click here and redact Click
         here and redact Click here and redact Click here and redact Click here and
@@ -3468,6 +3488,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1914261557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3503535670442157905, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+  m_PrefabInstance: {fileID: 1381022113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &1931288788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3544,6 +3575,10 @@ PrefabInstance:
       propertyPath: paintCamera
       value: 
       objectReference: {fileID: 1556556456}
+    - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
+      propertyPath: redoUIButton
+      value: 
+      objectReference: {fileID: 1914261557}
     - target: {fileID: 7908038416686630387, guid: 80e056ee77e922b4f89880d49f516bee, type: 3}
       propertyPath: stringContent
       value: 'Click here and redact Click here and redact Click here and redact Click
