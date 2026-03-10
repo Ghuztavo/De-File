@@ -3403,6 +3403,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3181163386373136710, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3181163386373136710, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4022444848456253716, guid: abe1a5c07e467244db38f90a7953f698, type: 3}
       propertyPath: Ink
       value: 70

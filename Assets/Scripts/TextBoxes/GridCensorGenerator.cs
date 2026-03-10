@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class GridCensorGenerator : MonoBehaviour
@@ -39,9 +41,15 @@ public class GridCensorGenerator : MonoBehaviour
     public Camera paintCamera;              // if null -> Camera.main
     public LayerMask cellLayerMask = ~0;    // should include ONLY cell colliders
 
-    [Header("Redo Button")]
+    [Header("Redo Button (UI)")]
+    // Assign the UI Button from your Canvas here (preferred)
+    [Tooltip("Assign the Canvas UI Button here (preferred).")]
+    public Button redoUIButton;
+
+    // Backwards-compat: optional world object (sprite with collider) - not required if using UI Button
+    [Header("Redo Button (world object, optional)")]
     public GameObject redoButton;
-    [SerializeField] private UnityEngine.UI.Button redoUIButton;
+    private Collider2D redoButtonCollider;
 
     [Header("Debug")]
     public bool showDebugLogs = true;
@@ -54,7 +62,6 @@ public class GridCensorGenerator : MonoBehaviour
     private bool canRedo = false;
     private BoxCollider2D bounds;
     private bool wasMousePressed = false;
-    private Collider2D redoButtonCollider;
 
     private readonly Dictionary<int, GameObject> censorByCellIndex = new();
     private CompositeCollider2D censorComposite;
@@ -78,11 +85,20 @@ public class GridCensorGenerator : MonoBehaviour
         // Make sure your paint raycasts never consider the censor layer
         cellLayerMask &= ~(1 << censorLayer);
 
+        // Wire up UI Button listener (preferred)
+        if (redoUIButton != null)
+        {
+            redoUIButton.onClick.AddListener(PerformRedo);
+            // ensure initial interactable state matches canRedo
+            redoUIButton.interactable = canRedo;
+        }
+
+        // Backwards-compatible: grab collider if a world game object is used instead
         if (redoButton != null)
         {
             redoButtonCollider = redoButton.GetComponent<Collider2D>();
             if (redoButtonCollider == null)
-                Debug.LogWarning("Redo button needs a Collider2D component!");
+                Debug.LogWarning("Redo button world object needs a Collider2D component!");
         }
     }
 
@@ -97,28 +113,44 @@ public class GridCensorGenerator : MonoBehaviour
 
         bool isPressed = Mouse.current.leftButton.isPressed;
 
+        // Read screen position once (used by world-space button check and paint)
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+
+        // If pointer is over any UI element, don't paint. UI will handle the click (e.g. button OnClick).
+        bool pointerOverUI = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+
         if (isPressed)
         {
-            Vector2 screenPos = Mouse.current.position.ReadValue();
-
-            if (CheckRedoButtonClick(screenPos))
+            // If we're clicking a world-space redo button (legacy), we want to handle it.
+            if (!pointerOverUI && CheckRedoButtonClick(screenPos))
             {
+                // world-space redo button pressed
                 PerformRedo();
             }
             else
             {
-                if (!wasMousePressed)
+                // If the pointer is over UI, don't start painting or clear the lastCensoredCells.
+                if (pointerOverUI)
                 {
-                    lastCensoredCells.Clear();
-                    canRedo = false;
-                    UpdateRedoButtonState();
+                    // do nothing (let UI handle the click)
                 }
+                else
+                {
+                    // Normal painting flow
+                    if (!wasMousePressed)
+                    {
+                        lastCensoredCells.Clear();
+                        canRedo = false;
+                        UpdateRedoButtonState();
+                    }
 
-                PaintAtScreenPosition(screenPos);
+                    PaintAtScreenPosition(screenPos);
+                }
             }
         }
         else if (wasMousePressed && !isPressed)
         {
+            // Mouse released: if we painted cells this press, allow redo.
             if (lastCensoredCells.Count > 0)
             {
                 canRedo = true;
@@ -175,6 +207,7 @@ public class GridCensorGenerator : MonoBehaviour
 
     private bool CheckRedoButtonClick(Vector2 screenPos)
     {
+        // Legacy world-space collider check (kept for compatibility).
         if (redoButton == null || redoButtonCollider == null || !canRedo)
             return false;
 
@@ -231,6 +264,14 @@ public class GridCensorGenerator : MonoBehaviour
         if (redoUIButton != null)
         {
             redoUIButton.interactable = canRedo;
+        }
+
+        // optional: if using world object button, toggle its visual state here too
+        if (redoButton != null)
+        {
+            // Example: enable/disable sprite renderer so it's visibly disabled
+            var sr = redoButton.GetComponent<SpriteRenderer>();
+            if (sr != null) sr.color = canRedo ? Color.white : new Color(1f, 1f, 1f, 0.5f);
         }
     }
 
@@ -361,8 +402,6 @@ public class GridCensorGenerator : MonoBehaviour
         {
             col.usedByComposite = true;
             col.isTrigger = false;
-
-            // If it's a BoxCollider2D, size it to the cell
         }
 
         // Scale sprite (visual)
@@ -411,6 +450,7 @@ public class GridCensorGenerator : MonoBehaviour
         censorByCellIndex.Clear();
         canRedo = false;
 
+        UpdateRedoButtonState();
         QueueRefreshCensorComposite();
     }
 }
