@@ -1,0 +1,73 @@
+name: Build Game
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build for ${{ matrix.targetPlatform }}
+    strategy:
+      matrix:
+        targetPlatform:
+          - WebGL
+          - StandaloneWindows64
+          - StandaloneOSX
+          - StandaloneLinux64
+    steps:
+      # Free up disk space
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          large-packages: false
+
+      # Checkout
+      - uses: actions/checkout@v6
+
+      # Cache
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ matrix.targetPlatform }}-
+
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+
+      # Output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
+
+  deploy:
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Builds
+        uses: actions/download-artifact@v4
+        with:
+          pattern: Build-*
+          path: build
+
+      - name: Setup butler
+        uses: remarkablegames/setup-butler@v2
+
+      - name: Upload to itch.io
+        run: |
+          butler push build/Build-WebGL/WebGL ibrahimexe/de-file:web
+          butler push build/Build-StandaloneWindows64 ibrahimexe/de-file:windows
+          butler push build/Build-StandaloneOSX ibrahimexe/de-file:macos
+          butler push build/Build-StandaloneLinux64 ibrahimexe/de-file:linux
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
